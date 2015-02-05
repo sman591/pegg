@@ -12,7 +12,8 @@ class ProfileViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        
+        UIApplication.sharedApplication().statusBarStyle = UIStatusBarStyle.LightContent // move to AppDelegate when all toolbars are purple
         
         var nav = self.navigationController?.navigationBar
         var color = UIColor(red: 127/255.0, green: 73/255.0, blue: 220/255.0, alpha: 1.0)
