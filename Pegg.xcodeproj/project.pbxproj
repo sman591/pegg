@@ -14,6 +14,7 @@
 		1733FA9A1A830CC0003C7773 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1733FA991A830CC0003C7773 /* Images.xcassets */; };
 		1733FA9D1A830CC0003C7773 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1733FA9B1A830CC0003C7773 /* LaunchScreen.xib */; };
 		1733FAA91A830CC0003C7773 /* PeggTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1733FAA81A830CC0003C7773 /* PeggTests.swift */; };
+		540CA4DF1A831F5600A384C1 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 540CA4DE1A831F5600A384C1 /* ProfileViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,6 +39,7 @@
 		1733FAA21A830CC0003C7773 /* PeggTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PeggTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		1733FAA71A830CC0003C7773 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1733FAA81A830CC0003C7773 /* PeggTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeggTests.swift; sourceTree = "<group>"; };
+		540CA4DE1A831F5600A384C1 /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,6 +83,7 @@
 			children = (
 				1733FA901A830CC0003C7773 /* AppDelegate.swift */,
 				1733FA921A830CC0003C7773 /* FindViewController.swift */,
+				540CA4DE1A831F5600A384C1 /* ProfileViewController.swift */,
 				1733FA941A830CC0003C7773 /* PeggViewController.swift */,
 				1733FA961A830CC0003C7773 /* Main.storyboard */,
 				1733FA991A830CC0003C7773 /* Images.xcassets */,
@@ -219,6 +222,7 @@
 			files = (
 				1733FA951A830CC0003C7773 /* PeggViewController.swift in Sources */,
 				1733FA911A830CC0003C7773 /* AppDelegate.swift in Sources */,
+				540CA4DF1A831F5600A384C1 /* ProfileViewController.swift in Sources */,
 				1733FA931A830CC0003C7773 /* FindViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
