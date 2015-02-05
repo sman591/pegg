@@ -14,6 +14,7 @@
 		1733FA9A1A830CC0003C7773 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1733FA991A830CC0003C7773 /* Images.xcassets */; };
 		1733FA9D1A830CC0003C7773 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1733FA9B1A830CC0003C7773 /* LaunchScreen.xib */; };
 		1733FAA91A830CC0003C7773 /* PeggTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1733FAA81A830CC0003C7773 /* PeggTests.swift */; };
+		1733FAB31A831F87003C7773 /* AuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1733FAB21A831F87003C7773 /* AuthViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,6 +39,7 @@
 		1733FAA21A830CC0003C7773 /* PeggTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PeggTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		1733FAA71A830CC0003C7773 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1733FAA81A830CC0003C7773 /* PeggTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeggTests.swift; sourceTree = "<group>"; };
+		1733FAB21A831F87003C7773 /* AuthViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,6 +85,7 @@
 				1733FA921A830CC0003C7773 /* FindViewController.swift */,
 				1733FA941A830CC0003C7773 /* PeggViewController.swift */,
 				1733FA961A830CC0003C7773 /* Main.storyboard */,
+				1733FAB21A831F87003C7773 /* AuthViewController.swift */,
 				1733FA991A830CC0003C7773 /* Images.xcassets */,
 				1733FA9B1A830CC0003C7773 /* LaunchScreen.xib */,
 				1733FA8E1A830CC0003C7773 /* Supporting Files */,
@@ -217,6 +220,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1733FAB31A831F87003C7773 /* AuthViewController.swift in Sources */,
 				1733FA951A830CC0003C7773 /* PeggViewController.swift in Sources */,
 				1733FA911A830CC0003C7773 /* AppDelegate.swift in Sources */,
 				1733FA931A830CC0003C7773 /* FindViewController.swift in Sources */,
