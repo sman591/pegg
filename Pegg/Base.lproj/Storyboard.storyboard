@@ -40,13 +40,31 @@
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Find" image="first" id="acW-dT-cKf"/>
+                    <navigationItem key="navigationItem" id="kND-OL-uE3"/>
                     <connections>
                         <segue destination="3sZ-39-uph" kind="presentation" id="7Oz-qm-ahP"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W5J-7L-Pyd" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="750" y="-320"/>
+            <point key="canvasLocation" x="1415" y="-340"/>
+        </scene>
+        <!--Find-->
+        <scene sceneID="I9f-0n-BbQ">
+            <objects>
+                <navigationController id="974-Ij-ncE" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Find" id="Cw3-Wf-N5M"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="ucK-4U-mFI">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="9pv-A4-QxB" kind="relationship" relationship="rootViewController" id="KLC-Ns-ovg"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="sWP-Tg-rlB" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="750" y="-340"/>
         </scene>
         <!--Pegg-->
         <scene sceneID="wg7-f3-ORb">
@@ -83,8 +101,26 @@
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Pegg" image="second" id="cPa-gy-q4n"/>
+                    <navigationItem key="navigationItem" id="W1d-oi-yCm"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Nw-L8-lE0" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1415" y="360"/>
+        </scene>
+        <!--Pegg-->
+        <scene sceneID="aOv-7s-kTw">
+            <objects>
+                <navigationController id="n7J-AA-Wxx" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Pegg" id="qx5-uN-2Sd"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="NhY-Zv-tcP">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="8rJ-Kc-sve" kind="relationship" relationship="rootViewController" id="0Lt-zb-WAU"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8iU-5q-RqW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="750" y="360"/>
         </scene>
@@ -271,9 +307,9 @@
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     </tabBar>
                     <connections>
-                        <segue destination="9pv-A4-QxB" kind="relationship" relationship="viewControllers" id="u7Y-xg-7CH"/>
-                        <segue destination="8rJ-Kc-sve" kind="relationship" relationship="viewControllers" id="lzU-1b-eKA"/>
                         <segue destination="SZe-2g-GOH" kind="relationship" relationship="viewControllers" id="uRT-rW-ZxY"/>
+                        <segue destination="n7J-AA-Wxx" kind="relationship" relationship="viewControllers" id="WNs-ha-SfX"/>
+                        <segue destination="974-Ij-ncE" kind="relationship" relationship="viewControllers" id="sLc-oB-vbp"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HuB-VB-40B" sceneMemberID="firstResponder"/>
