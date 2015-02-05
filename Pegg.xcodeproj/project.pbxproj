@@ -10,7 +10,7 @@
 		1733FA911A830CC0003C7773 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1733FA901A830CC0003C7773 /* AppDelegate.swift */; };
 		1733FA931A830CC0003C7773 /* FindViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1733FA921A830CC0003C7773 /* FindViewController.swift */; };
 		1733FA951A830CC0003C7773 /* PeggViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1733FA941A830CC0003C7773 /* PeggViewController.swift */; };
-		1733FA981A830CC0003C7773 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1733FA961A830CC0003C7773 /* Main.storyboard */; };
+		1733FA981A830CC0003C7773 /* Storyboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1733FA961A830CC0003C7773 /* Storyboard.storyboard */; };
 		1733FA9A1A830CC0003C7773 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1733FA991A830CC0003C7773 /* Images.xcassets */; };
 		1733FA9D1A830CC0003C7773 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1733FA9B1A830CC0003C7773 /* LaunchScreen.xib */; };
 		1733FAA91A830CC0003C7773 /* PeggTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1733FAA81A830CC0003C7773 /* PeggTests.swift */; };
@@ -37,7 +37,7 @@
 		1733FA901A830CC0003C7773 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1733FA921A830CC0003C7773 /* FindViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindViewController.swift; sourceTree = "<group>"; };
 		1733FA941A830CC0003C7773 /* PeggViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeggViewController.swift; sourceTree = "<group>"; };
-		1733FA971A830CC0003C7773 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		1733FA971A830CC0003C7773 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Storyboard.storyboard; sourceTree = "<group>"; };
 		1733FA991A830CC0003C7773 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		1733FA9C1A830CC0003C7773 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		1733FAA21A830CC0003C7773 /* PeggTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PeggTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -61,9 +61,9 @@
 		540CA5101A832F8900A384C1 /* ParseCrashReporting.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ParseCrashReporting.framework; path = "../../../Downloads/parse-library-1.6.2 3/ParseCrashReporting.framework"; sourceTree = "<group>"; };
 		540CA5111A832F8900A384C1 /* ParseFacebookUtils.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ParseFacebookUtils.framework; path = "../../../Downloads/parse-library-1.6.2 3/ParseFacebookUtils.framework"; sourceTree = "<group>"; };
 		540CA5121A832F8900A384C1 /* ParseUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ParseUI.framework; path = "../../../Downloads/parse-library-1.6.2 3/ParseUI.framework"; sourceTree = "<group>"; };
-		544E41C81A8353520052C50D /* pegg_icon_full.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = pegg_icon_full.png; path = Pegg/pegg_icon_full.png; sourceTree = "<group>"; };
-		544E41CA1A83543F0052C50D /* pegg_icon_full copy_small.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "pegg_icon_full copy_small.png"; sourceTree = "<group>"; };
-		544E41D01A83553B0052C50D /* bell_small.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bell_small.png; sourceTree = "<group>"; };
+		544E41C81A8353520052C50D /* pegg_icon_full.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pegg_icon_full.png; sourceTree = "<group>"; };
+		544E41CA1A83543F0052C50D /* pegg_icon_full copy_small.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "pegg_icon_full copy_small.png"; path = "../pegg_icon_full copy_small.png"; sourceTree = "<group>"; };
+		544E41D01A83553B0052C50D /* bell_small.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = bell_small.png; path = ../bell_small.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,9 +87,8 @@
 		1733FA821A830CC0003C7773 = {
 			isa = PBXGroup;
 			children = (
-				544E41C81A8353520052C50D /* pegg_icon_full.png */,
-				544E41CA1A83543F0052C50D /* pegg_icon_full copy_small.png */,
-				544E41D01A83553B0052C50D /* bell_small.png */,
+				1733FA961A830CC0003C7773 /* Storyboard.storyboard */,
+				1733FA9B1A830CC0003C7773 /* LaunchScreen.xib */,
 				540CA4FE1A83266A00A384C1 /* Frameworks */,
 				1733FA8D1A830CC0003C7773 /* Pegg */,
 				1733FAA51A830CC0003C7773 /* PeggTests */,
@@ -109,14 +108,13 @@
 		1733FA8D1A830CC0003C7773 /* Pegg */ = {
 			isa = PBXGroup;
 			children = (
+				17E45C661A83590E00642FC4 /* Assets */,
 				1733FA901A830CC0003C7773 /* AppDelegate.swift */,
 				1733FAB41A83241D003C7773 /* AuthViewController.swift */,
 				1733FA921A830CC0003C7773 /* FindViewController.swift */,
 				540CA4DE1A831F5600A384C1 /* ProfileViewController.swift */,
 				1733FA941A830CC0003C7773 /* PeggViewController.swift */,
-				1733FA961A830CC0003C7773 /* Main.storyboard */,
 				1733FA991A830CC0003C7773 /* Images.xcassets */,
-				1733FA9B1A830CC0003C7773 /* LaunchScreen.xib */,
 				1733FA8E1A830CC0003C7773 /* Supporting Files */,
 				540CA4FF1A83277F00A384C1 /* Pegg-Bridging-Header.h */,
 			);
@@ -146,6 +144,16 @@
 				1733FAA71A830CC0003C7773 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		17E45C661A83590E00642FC4 /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				544E41C81A8353520052C50D /* pegg_icon_full.png */,
+				544E41CA1A83543F0052C50D /* pegg_icon_full copy_small.png */,
+				544E41D01A83553B0052C50D /* bell_small.png */,
+			);
+			name = Assets;
 			sourceTree = "<group>";
 		};
 		540CA4FE1A83266A00A384C1 /* Frameworks */ = {
@@ -253,7 +261,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				544E41D11A83553B0052C50D /* bell_small.png in Resources */,
-				1733FA981A830CC0003C7773 /* Main.storyboard in Resources */,
+				1733FA981A830CC0003C7773 /* Storyboard.storyboard in Resources */,
 				1733FA9D1A830CC0003C7773 /* LaunchScreen.xib in Resources */,
 				544E41C91A8353520052C50D /* pegg_icon_full.png in Resources */,
 				1733FA9A1A830CC0003C7773 /* Images.xcassets in Resources */,
@@ -302,12 +310,13 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		1733FA961A830CC0003C7773 /* Main.storyboard */ = {
+		1733FA961A830CC0003C7773 /* Storyboard.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				1733FA971A830CC0003C7773 /* Base */,
 			);
-			name = Main.storyboard;
+			name = Storyboard.storyboard;
+			path = Pegg;
 			sourceTree = "<group>";
 		};
 		1733FA9B1A830CC0003C7773 /* LaunchScreen.xib */ = {
@@ -316,6 +325,7 @@
 				1733FA9C1A830CC0003C7773 /* Base */,
 			);
 			name = LaunchScreen.xib;
+			path = Pegg;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
