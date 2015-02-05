@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14C109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="49e-Tb-3d3">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="49e-Tb-3d3">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
@@ -105,10 +105,10 @@
             </objects>
             <point key="canvasLocation" x="750" y="1048"/>
         </scene>
-        <!--pegg-->
+        <!--Profile View Controller-->
         <scene sceneID="FM9-VR-WRc">
             <objects>
-                <viewController id="KYt-wR-5Hx" sceneMemberID="viewController">
+                <viewController id="KYt-wR-5Hx" customClass="ProfileViewController" customModule="Pegg" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="wKy-zb-S9c"/>
                         <viewControllerLayoutGuide type="bottom" id="40p-dc-8Uz"/>
@@ -179,7 +179,25 @@
                             <constraint firstItem="zw7-Pd-xPS" firstAttribute="leading" secondItem="fVo-kL-sXV" secondAttribute="trailing" constant="15" id="v7Y-9O-tLI"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="pegg" id="P31-co-Yoc"/>
+                    <navigationItem key="navigationItem" id="P31-co-Yoc">
+                        <nil key="title"/>
+                        <button key="titleView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="0er-Uw-pXv">
+                            <rect key="frame" x="86" y="-168" width="429" height="380"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <state key="normal" image="pegg_icon_full copy_small.png">
+                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                        </button>
+                        <barButtonItem key="rightBarButtonItem" id="N1e-u2-Bd9">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="1nx-28-mBa">
+                                <rect key="frame" x="534" y="7" width="30" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="bell_small.png">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                        </barButtonItem>
+                    </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0Yh-Ay-uN7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -264,7 +282,9 @@
         </scene>
     </scenes>
     <resources>
+        <image name="bell_small.png" width="40" height="37"/>
         <image name="first" width="30" height="30"/>
+        <image name="pegg_icon_full copy_small.png" width="142" height="50"/>
         <image name="second" width="30" height="30"/>
     </resources>
 </document>

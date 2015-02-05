@@ -16,6 +16,9 @@
 		1733FAA91A830CC0003C7773 /* PeggTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1733FAA81A830CC0003C7773 /* PeggTests.swift */; };
 		1733FAB51A83241D003C7773 /* AuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1733FAB41A83241D003C7773 /* AuthViewController.swift */; };
 		540CA4DF1A831F5600A384C1 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 540CA4DE1A831F5600A384C1 /* ProfileViewController.swift */; };
+		544E41C91A8353520052C50D /* pegg_icon_full.png in Resources */ = {isa = PBXBuildFile; fileRef = 544E41C81A8353520052C50D /* pegg_icon_full.png */; };
+		544E41CB1A83543F0052C50D /* pegg_icon_full copy_small.png in Resources */ = {isa = PBXBuildFile; fileRef = 544E41CA1A83543F0052C50D /* pegg_icon_full copy_small.png */; };
+		544E41D11A83553B0052C50D /* bell_small.png in Resources */ = {isa = PBXBuildFile; fileRef = 544E41D01A83553B0052C50D /* bell_small.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,6 +61,9 @@
 		540CA5101A832F8900A384C1 /* ParseCrashReporting.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ParseCrashReporting.framework; path = "../../../Downloads/parse-library-1.6.2 3/ParseCrashReporting.framework"; sourceTree = "<group>"; };
 		540CA5111A832F8900A384C1 /* ParseFacebookUtils.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ParseFacebookUtils.framework; path = "../../../Downloads/parse-library-1.6.2 3/ParseFacebookUtils.framework"; sourceTree = "<group>"; };
 		540CA5121A832F8900A384C1 /* ParseUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ParseUI.framework; path = "../../../Downloads/parse-library-1.6.2 3/ParseUI.framework"; sourceTree = "<group>"; };
+		544E41C81A8353520052C50D /* pegg_icon_full.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = pegg_icon_full.png; path = Pegg/pegg_icon_full.png; sourceTree = "<group>"; };
+		544E41CA1A83543F0052C50D /* pegg_icon_full copy_small.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "pegg_icon_full copy_small.png"; sourceTree = "<group>"; };
+		544E41D01A83553B0052C50D /* bell_small.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bell_small.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,6 +87,9 @@
 		1733FA821A830CC0003C7773 = {
 			isa = PBXGroup;
 			children = (
+				544E41C81A8353520052C50D /* pegg_icon_full.png */,
+				544E41CA1A83543F0052C50D /* pegg_icon_full copy_small.png */,
+				544E41D01A83553B0052C50D /* bell_small.png */,
 				540CA4FE1A83266A00A384C1 /* Frameworks */,
 				1733FA8D1A830CC0003C7773 /* Pegg */,
 				1733FAA51A830CC0003C7773 /* PeggTests */,
@@ -243,9 +252,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				544E41D11A83553B0052C50D /* bell_small.png in Resources */,
 				1733FA981A830CC0003C7773 /* Main.storyboard in Resources */,
 				1733FA9D1A830CC0003C7773 /* LaunchScreen.xib in Resources */,
+				544E41C91A8353520052C50D /* pegg_icon_full.png in Resources */,
 				1733FA9A1A830CC0003C7773 /* Images.xcassets in Resources */,
+				544E41CB1A83543F0052C50D /* pegg_icon_full copy_small.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
