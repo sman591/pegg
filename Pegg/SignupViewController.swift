@@ -1,5 +1,5 @@
 //
-//  AuthViewController.swift
+//  SignupViewController.swift
 //  Pegg
 //
 //  Created by Stuart Olivera on 2/4/15.
@@ -7,36 +7,39 @@
 //
 
 import UIKit
-import SwiftKeychainWrapper
 import Alamofire
 import SwiftyJSON
+import SwiftKeychainWrapper
 
-class AuthViewController: UIViewController {
+class SignupController: UIViewController {
     
+    @IBOutlet weak var firstField: UITextField!
+    @IBOutlet weak var lastField: UITextField!
     @IBOutlet weak var userField: UITextField!
     @IBOutlet weak var passField: UITextField!
+    @IBOutlet weak var emailField: UITextField!
     
     override func viewDidLoad() {
         super.viewDidLoad()
     }
     
-    override func viewDidAppear(animated: Bool) {
-        super.viewDidAppear(true)
+    @IBAction func backToLogin(sender: UIButton) {
         
-        let isLoggedIn:String? = KeychainWrapper.stringForKey("isLoggedIn")
+        self.dismissViewControllerAnimated(true, completion: nil)
         
-        if (isLoggedIn == "1") {
-            self.dismissViewControllerAnimated(true, completion: nil)
-        }
     }
-
-    @IBAction func loginButtonAction(sender: UIButton) {
+    
+    
+    @IBAction func signupAction(sender: UIButton) {
         
         let username:NSString = userField.text as NSString
+        let first_name:NSString = firstField.text as NSString
+        let last_name:NSString = lastField.text as NSString
+        let email:NSString = emailField.text as NSString
         let password:NSString = passField.text as NSString
         
-        Alamofire.request(.POST, "http://friendlyu.com/pegg/loginUser.php",
-            parameters: ["user": username, "pass": password])
+        Alamofire.request(.POST, "http://friendlyu.com/pegg/addUser.php",
+            parameters: ["user": username, "pass": password, "first": first_name, "last": last_name, "email": email])
             .responseJSON { (_, _, data, error) in
                 if let data: AnyObject = data {
                     let json = JSON(data)
@@ -56,11 +59,11 @@ class AuthViewController: UIViewController {
                 }
         }
         
-        self.dismissViewControllerAnimated(true, completion: nil)
+        
     }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
-
+    
 }
