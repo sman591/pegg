@@ -9,6 +9,8 @@
 import UIKit
 
 class ProfileViewController: UIViewController {
+
+    @IBOutlet weak var profilePictureView: UIImageView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -16,6 +18,11 @@ class ProfileViewController: UIViewController {
         var nav = self.navigationController?.navigationBar
         var color = UIColor(red: 127/255.0, green: 73/255.0, blue: 220/255.0, alpha: 1.0)
         nav?.barTintColor = color
+        
+        let image = UIImageView(image: UIImage(named: "headshot"))
+        self.profilePictureView = image
+        self.profilePictureView.layer.cornerRadius = self.profilePictureView.frame.size.width / 2;
+        self.profilePictureView.clipsToBounds = true;
         
     }
     
