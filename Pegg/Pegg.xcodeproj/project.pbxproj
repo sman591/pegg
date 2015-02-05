@@ -164,10 +164,11 @@
 				TargetAttributes = {
 					1733FA8A1A830CC0003C7773 = {
 						CreatedOnToolsVersion = 6.1.1;
-						DevelopmentTeam = 7R48W84A8H;
+						DevelopmentTeam = LCB3NE4A8E;
 					};
 					1733FAA11A830CC0003C7773 = {
 						CreatedOnToolsVersion = 6.1.1;
+						DevelopmentTeam = LCB3NE4A8E;
 						TestTargetID = 1733FA8A1A830CC0003C7773;
 					};
 				};
@@ -416,6 +417,7 @@
 				1733FAAE1A830CC0003C7773 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		1733FAAF1A830CC0003C7773 /* Build configuration list for PBXNativeTarget "PeggTests" */ = {
 			isa = XCConfigurationList;
@@ -424,6 +426,7 @@
 				1733FAB11A830CC0003C7773 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
