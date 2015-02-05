@@ -18,9 +18,13 @@ class SignupController: UIViewController {
     @IBOutlet weak var userField: UITextField!
     @IBOutlet weak var passField: UITextField!
     @IBOutlet weak var emailField: UITextField!
+    var clicked = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "keyboardWillShow:", name: UIKeyboardWillShowNotification, object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "keyboardWillHide:", name: UIKeyboardWillHideNotification, object: nil)
     }
     
     @IBAction func backToLogin(sender: UIButton) {
@@ -60,6 +64,28 @@ class SignupController: UIViewController {
         }
         
         
+    }
+    
+    func keyboardWillShow(sender: NSNotification) {
+        
+        if !clicked {
+            self.view.frame.origin.y -= 175
+            clicked = true
+        }
+        
+    }
+    
+    func keyboardWillHide(sender: NSNotification) {
+        
+        if clicked {
+            self.view.frame.origin.y += 175
+            clicked = false
+        }
+        
+    }
+    func textFieldShouldReturn(textField: UITextField!) -> Bool {   //delegate method
+        textField.resignFirstResponder()
+        return true
     }
     
     override func didReceiveMemoryWarning() {

@@ -15,9 +15,14 @@ class AuthViewController: UIViewController {
     
     @IBOutlet weak var userField: UITextField!
     @IBOutlet weak var passField: UITextField!
+    var clicked = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "keyboardWillShow:", name: UIKeyboardWillShowNotification, object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "keyboardWillHide:", name: UIKeyboardWillHideNotification, object: nil)
+        
     }
     
     override func viewDidAppear(animated: Bool) {
@@ -41,7 +46,7 @@ class AuthViewController: UIViewController {
                 if let data: AnyObject = data {
                     let json = JSON(data)
                     let success = json["success"]
-                    if success {
+                    if success == true {
                         let saveToken: Bool = KeychainWrapper.setString(json["data"]["token"].stringValue, forKey: "token")
                         let loggedIn: Bool = KeychainWrapper.setString("1", forKey: "isLoggedIn")
                         self.dismissViewControllerAnimated(true, completion: nil)
@@ -58,6 +63,29 @@ class AuthViewController: UIViewController {
         
         self.dismissViewControllerAnimated(true, completion: nil)
     }
+    
+    func keyboardWillShow(sender: NSNotification) {
+        
+        if !clicked {
+            self.view.frame.origin.y -= 175
+            clicked = true
+        }
+        
+    }
+    
+    func keyboardWillHide(sender: NSNotification) {
+        
+        if clicked {
+            self.view.frame.origin.y += 175
+            clicked = false
+        }
+        
+    }
+    func textFieldShouldReturn(textField: UITextField!) -> Bool {   //delegate method
+        textField.resignFirstResponder()
+        return true
+    }
+
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
