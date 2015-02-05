@@ -8,8 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		1733FA911A830CC0003C7773 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1733FA901A830CC0003C7773 /* AppDelegate.swift */; };
-		1733FA931A830CC0003C7773 /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1733FA921A830CC0003C7773 /* FirstViewController.swift */; };
-		1733FA951A830CC0003C7773 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1733FA941A830CC0003C7773 /* SecondViewController.swift */; };
+		1733FA931A830CC0003C7773 /* FindViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1733FA921A830CC0003C7773 /* FindViewController.swift */; };
+		1733FA951A830CC0003C7773 /* PeggViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1733FA941A830CC0003C7773 /* PeggViewController.swift */; };
 		1733FA981A830CC0003C7773 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1733FA961A830CC0003C7773 /* Main.storyboard */; };
 		1733FA9A1A830CC0003C7773 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1733FA991A830CC0003C7773 /* Images.xcassets */; };
 		1733FA9D1A830CC0003C7773 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1733FA9B1A830CC0003C7773 /* LaunchScreen.xib */; };
@@ -30,8 +30,8 @@
 		1733FA8B1A830CC0003C7773 /* Pegg.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Pegg.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1733FA8F1A830CC0003C7773 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1733FA901A830CC0003C7773 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		1733FA921A830CC0003C7773 /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
-		1733FA941A830CC0003C7773 /* SecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
+		1733FA921A830CC0003C7773 /* FindViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindViewController.swift; sourceTree = "<group>"; };
+		1733FA941A830CC0003C7773 /* PeggViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeggViewController.swift; sourceTree = "<group>"; };
 		1733FA971A830CC0003C7773 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		1733FA991A830CC0003C7773 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		1733FA9C1A830CC0003C7773 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
@@ -80,8 +80,8 @@
 			isa = PBXGroup;
 			children = (
 				1733FA901A830CC0003C7773 /* AppDelegate.swift */,
-				1733FA921A830CC0003C7773 /* FirstViewController.swift */,
-				1733FA941A830CC0003C7773 /* SecondViewController.swift */,
+				1733FA921A830CC0003C7773 /* FindViewController.swift */,
+				1733FA941A830CC0003C7773 /* PeggViewController.swift */,
 				1733FA961A830CC0003C7773 /* Main.storyboard */,
 				1733FA991A830CC0003C7773 /* Images.xcassets */,
 				1733FA9B1A830CC0003C7773 /* LaunchScreen.xib */,
@@ -217,9 +217,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1733FA951A830CC0003C7773 /* SecondViewController.swift in Sources */,
+				1733FA951A830CC0003C7773 /* PeggViewController.swift in Sources */,
 				1733FA911A830CC0003C7773 /* AppDelegate.swift in Sources */,
-				1733FA931A830CC0003C7773 /* FirstViewController.swift in Sources */,
+				1733FA931A830CC0003C7773 /* FindViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

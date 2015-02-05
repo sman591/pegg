@@ -1,5 +1,5 @@
 //
-//  SecondViewController.swift
+//  FindViewController.swift
 //  Pegg
 //
 //  Created by Stuart Olivera on 2/4/15.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class SecondViewController: UIViewController {
+class FindViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()

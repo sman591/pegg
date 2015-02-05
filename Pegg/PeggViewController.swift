@@ -1,5 +1,5 @@
 //
-//  FirstViewController.swift
+//  PeggViewController.swift
 //  Pegg
 //
 //  Created by Stuart Olivera on 2/4/15.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class FirstViewController: UIViewController {
+class PeggViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
