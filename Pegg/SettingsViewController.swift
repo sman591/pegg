@@ -11,17 +11,35 @@ import SwiftKeychainWrapper
 import Alamofire
 import SwiftyJSON
 
-class SettingsViewController: UIViewController {
+class SettingsViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.title = "Settings"
-        
     }
     
-    @IBAction func logoutAction(sender: UIButton) {
-        let saveToken: Bool = KeychainWrapper.setString("", forKey: "token")
-        let loggedIn: Bool = KeychainWrapper.setString("0", forKey: "isLoggedIn")
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        let row = tableView.indexPathForSelectedRow()?.row;
+        let section = tableView.indexPathForSelectedRow()?.section;
+        if (row == 0 && section == 0) {
+            //logout button
+            let saveToken: Bool = KeychainWrapper.setString("", forKey: "token")
+            let loggedIn: Bool = KeychainWrapper.setString("0", forKey: "isLoggedIn")
+            self.performSegueWithIdentifier("logout", sender: self)
+        }
+        if (row == 0 && section == 1) {
+            //about button
+            self.performSegueWithIdentifier("about", sender: self)
+        }
+        if (row == 1 && section == 1) {
+            //credits button
+            self.performSegueWithIdentifier("credits", sender: self)
+        }
+        if (row == 2 && section == 1) {
+            //contact button
+            let email = "henry@henrysaniuk.com"
+            let url = NSURL(string: "mailto:\(email)")
+            UIApplication.sharedApplication().openURL(url!)
+        }
     }
     
     override func viewDidAppear(animated: Bool) {
