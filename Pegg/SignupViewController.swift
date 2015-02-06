@@ -7,9 +7,9 @@
 //
 
 import UIKit
-import Alamofire
 import SwiftyJSON
 import SwiftKeychainWrapper
+import Alamofire
 
 class SignupController: UIViewController {
     
