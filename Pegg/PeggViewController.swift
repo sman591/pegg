@@ -7,6 +7,9 @@
 //
 
 import UIKit
+import Alamofire
+import SwiftyJSON
+import SwiftKeychainWrapper
 
 class PeggViewController: UIViewController {
 
@@ -18,6 +21,40 @@ class PeggViewController: UIViewController {
         nav?.barTintColor = color
         
     }
+    
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(true)
+        
+        let token:String! = KeychainWrapper.stringForKey("token")
+        
+        //check if user's token is still active
+        
+        Alamofire.request(.POST, "http://friendlyu.com/pegg/activeToken.php",
+            parameters: ["token": token])
+            .responseJSON { (_, _, data, error) in
+                if let data: AnyObject = data {
+                    let json = JSON(data)
+                    let success = json["success"]
+                    if !success {
+                        
+                        var alertView:UIAlertView = UIAlertView()
+                        alertView.title = "Error"
+                        alertView.message = "There was an error validating your login. Please login again."
+                        alertView.delegate = self
+                        alertView.addButtonWithTitle("OK")
+                        alertView.show()
+                        
+                        let saveToken: Bool = KeychainWrapper.setString("", forKey: "token")
+                        let loggedIn: Bool = KeychainWrapper.setString("0", forKey: "isLoggedIn")
+                        
+                        self.performSegueWithIdentifier("logout", sender: self)
+                        
+                    }
+                }
+        }
+        
+    }
+
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

@@ -1,8 +1,8 @@
 //
-//  FindViewController.swift
+//  SettingsViewController.swift
 //  Pegg
 //
-//  Created by Stuart Olivera on 2/4/15.
+//  Created by Henry Saniuk on 2/4/15.
 //  Copyright (c) 2015 Henry Saniuk, Stuart Olivera, Brandon Hudson. All rights reserved.
 //
 
@@ -11,26 +11,26 @@ import SwiftKeychainWrapper
 import Alamofire
 import SwiftyJSON
 
-class FindViewController: UIViewController {
-
+class SettingsViewController: UIViewController {
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         var nav = self.navigationController?.navigationBar
         var color = UIColor(red: 127/255.0, green: 73/255.0, blue: 220/255.0, alpha: 1.0)
         nav?.barTintColor = color
+        self.title = "Settings"
+        nav?.tintColor = UIColor.whiteColor()
         
+    }
+    
+    @IBAction func logoutAction(sender: UIButton) {
+        let saveToken: Bool = KeychainWrapper.setString("", forKey: "token")
+        let loggedIn: Bool = KeychainWrapper.setString("0", forKey: "isLoggedIn")
     }
     
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(true)
-        
-        
-        let isLoggedIn:String? = KeychainWrapper.stringForKey("isLoggedIn")
-        
-        if (isLoggedIn != "1") {
-            self.performSegueWithIdentifier("goToLogin", sender: self)
-        }
         
         let token:String! = KeychainWrapper.stringForKey("token")
         
@@ -59,14 +59,14 @@ class FindViewController: UIViewController {
                     }
                 }
         }
-
+        
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
-
+    
+    
 }
 

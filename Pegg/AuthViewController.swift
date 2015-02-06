@@ -50,18 +50,17 @@ class AuthViewController: UIViewController {
                         let saveToken: Bool = KeychainWrapper.setString(json["data"]["token"].stringValue, forKey: "token")
                         let loggedIn: Bool = KeychainWrapper.setString("1", forKey: "isLoggedIn")
                         self.dismissViewControllerAnimated(true, completion: nil)
+                        
                     } else {
                         var alertView:UIAlertView = UIAlertView()
-                        alertView.title = "Sign Up Failed!"
-                        alertView.message = json["data"]["message"].stringValue
+                        alertView.title = "Sign In Failed!"
+                        alertView.message = json["message"].stringValue
                         alertView.delegate = self
                         alertView.addButtonWithTitle("OK")
                         alertView.show()
                     }
                 }
         }
-        
-        self.dismissViewControllerAnimated(true, completion: nil)
     }
     
     func keyboardWillShow(sender: NSNotification) {
