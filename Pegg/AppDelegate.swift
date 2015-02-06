@@ -16,6 +16,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         UIApplication.sharedApplication().statusBarStyle = UIStatusBarStyle.LightContent
+        
+        
+        let color = UIColor(red: 127/255.0, green: 73/255.0, blue: 220/255.0, alpha: 1.0)
+        UINavigationBar.appearance().barTintColor = color
+        UIToolbar.appearance().barTintColor = color
+        UITabBar.appearance().tintColor = color
+        UINavigationBar.appearance().tintColor = UIColor.whiteColor()
+        UIToolbar.appearance().tintColor = UIColor.whiteColor()
         return true
     }
 

@@ -479,6 +479,7 @@
                         <rect key="frame" x="0.0" y="975" width="768" height="49"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                        <color key="tintColor" red="0.53725490200000003" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                     </tabBar>
                     <connections>
                         <segue destination="974-Ij-ncE" kind="relationship" relationship="viewControllers" id="sLc-oB-vbp"/>
@@ -495,7 +496,7 @@
         <scene sceneID="qUq-d0-zrI">
             <objects>
                 <navigationController title="Settings" id="pP5-Zn-AMJ" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Settings" image="gear-7" selectedImage="gear-7" id="e08-8N-ei2"/>
+                    <tabBarItem key="tabBarItem" title="Settings" image="gear-7" id="e08-8N-ei2"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="d9y-KP-grL">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -533,8 +534,8 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RbE-F0-5I0">
-                                <rect key="frame" x="258" y="123" width="49" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RbE-F0-5I0">
+                                <rect key="frame" x="276" y="123" width="49" height="30"/>
                                 <state key="normal" title="Logout">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -574,6 +575,6 @@
         <image name="pushpin-7" width="30" height="30"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="FBA-gz-dAf"/>
+        <segue reference="AoC-NB-MgH"/>
     </inferredMetricsTieBreakers>
 </document>
