@@ -12,8 +12,6 @@ class PeggViewController: UIViewController, UIImagePickerControllerDelegate,UINa
     
     let picker = UIImagePickerController()
 
-    @IBOutlet var takeAPegButton: UIButton!
-    
     @IBAction func takeAPegg(sender: UIButton) {
         
         if UIImagePickerController.availableCaptureModesForCameraDevice(.Rear) != nil {
@@ -33,12 +31,11 @@ class PeggViewController: UIViewController, UIImagePickerControllerDelegate,UINa
         presentViewController(alertVC, animated: true, completion: nil)
     }
     
+    //What to do when the picker returns with a photo
     func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [NSObject : AnyObject]) {
         var chosenImage = info[UIImagePickerControllerOriginalImage] as UIImage
-        self.takeAPegButton.hidden = true
         dismissViewControllerAnimated(true, completion: nil)
     }
-    
     func imagePickerControllerDidCancel(picker: UIImagePickerController) {
         dismissViewControllerAnimated(true, completion: nil)
     }

@@ -86,7 +86,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="takeAPegg:" destination="8rJ-Kc-sve" eventType="touchUpInside" id="nZz-zR-pFP"/>
+                                    <action selector="takeAPegg:" destination="8rJ-Kc-sve" eventType="touchUpInside" id="cmF-Uv-6Gq"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -99,8 +99,6 @@
                     <tabBarItem key="tabBarItem" title="Pegg" image="pushpin-7" id="cPa-gy-q4n"/>
                     <navigationItem key="navigationItem" title="Pegg" id="W1d-oi-yCm"/>
                     <connections>
-                        <outlet property="takeAPeg" destination="X7d-34-Ph9" id="PVC-SG-QI2"/>
-                        <outlet property="takeAPegButton" destination="X7d-34-Ph9" id="j2b-E7-hTY"/>
                         <segue destination="3sZ-39-uph" kind="presentation" identifier="logout" id="toh-Ip-N6b"/>
                     </connections>
                 </viewController>
