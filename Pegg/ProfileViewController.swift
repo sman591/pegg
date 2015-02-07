@@ -20,6 +20,9 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
     @IBOutlet weak var name: UILabel!
     
     var items: [String] = []
+    var details: [String] = []
+    var badges: [String] = []
+    var friends: [String] = []
     
     @IBAction func indexChanged(sender: UISegmentedControl) {
         switch segmentedControl.selectedSegmentIndex
@@ -54,11 +57,8 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
         badgesTable()
         
         let image = UIImageView(image: UIImage(named: "headshot"))
-        self.profilePictureView = image
-        self.profilePictureView.layer.cornerRadius = self.profilePictureView.frame.size.width / 2;
-        self.profilePictureView.clipsToBounds = true;
-        
-        self.tableView.registerClass(UITableViewCell.self, forCellReuseIdentifier: "cell")
+
+        self.tableView.registerClass(ProfileTableViewCell.self, forCellReuseIdentifier: "cell")
         
     }
     
@@ -95,9 +95,10 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        var cell:UITableViewCell = self.tableView.dequeueReusableCellWithIdentifier("cell") as UITableViewCell
+        var cell:ProfileTableViewCell = self.tableView.dequeueReusableCellWithIdentifier("cell") as ProfileTableViewCell
         
-        cell.textLabel?.text = self.items[indexPath.row]
+        cell.nameLabel?.text = self.items[indexPath.row]
+        //cell.detailTextLabel?.text = self.items[indexPath.row]
         
         return cell
     }

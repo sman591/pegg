@@ -21,6 +21,7 @@
 		544E41D31A8369EF0052C50D /* bell_small.png in Resources */ = {isa = PBXBuildFile; fileRef = 544E41D21A8369EF0052C50D /* bell_small.png */; };
 		544E41D51A8375A40052C50D /* pegg_icon_full.png in Resources */ = {isa = PBXBuildFile; fileRef = 544E41D41A8375A40052C50D /* pegg_icon_full.png */; };
 		544E41D71A8377B50052C50D /* SignupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 544E41D61A8377B50052C50D /* SignupViewController.swift */; };
+		549416C21A85A93700C28868 /* ProfileTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 549416C11A85A93700C28868 /* ProfileTableViewCell.swift */; };
 		54B8357C1A840E3B00C1105A /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54B8357B1A840E3B00C1105A /* SettingsViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -53,6 +54,7 @@
 		544E41D21A8369EF0052C50D /* bell_small.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bell_small.png; sourceTree = "<group>"; };
 		544E41D41A8375A40052C50D /* pegg_icon_full.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pegg_icon_full.png; sourceTree = "<group>"; };
 		544E41D61A8377B50052C50D /* SignupViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignupViewController.swift; sourceTree = "<group>"; };
+		549416C11A85A93700C28868 /* ProfileTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileTableViewCell.swift; sourceTree = "<group>"; };
 		54B8357B1A840E3B00C1105A /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		6617710EAD000F0246D4CAFE /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D13DBCFF8A6ECE741533F2D0 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
@@ -106,6 +108,7 @@
 				17E45C661A83590E00642FC4 /* Assets */,
 				1733FA901A830CC0003C7773 /* AppDelegate.swift */,
 				1733FAB41A83241D003C7773 /* AuthViewController.swift */,
+				549416C11A85A93700C28868 /* ProfileTableViewCell.swift */,
 				1733FA921A830CC0003C7773 /* FindViewController.swift */,
 				54B8357B1A840E3B00C1105A /* SettingsViewController.swift */,
 				544E41D61A8377B50052C50D /* SignupViewController.swift */,
@@ -327,6 +330,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				544E41D71A8377B50052C50D /* SignupViewController.swift in Sources */,
+				549416C21A85A93700C28868 /* ProfileTableViewCell.swift in Sources */,
 				1733FA951A830CC0003C7773 /* PeggViewController.swift in Sources */,
 				54B8357C1A840E3B00C1105A /* SettingsViewController.swift in Sources */,
 				1733FA911A830CC0003C7773 /* AppDelegate.swift in Sources */,

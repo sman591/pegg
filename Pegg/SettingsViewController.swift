@@ -32,7 +32,7 @@ class SettingsViewController: UITableViewController {
                 let loggedIn: Bool = KeychainWrapper.setString("0", forKey: "isLoggedIn")
                 self.performSegueWithIdentifier("logout", sender: self)
             case .ContactUs:
-                let email = "henry@henrysaniuk.com"
+                let email = "peggapp@csh.rit.edu"
                 let url = NSURL(string: "mailto:\(email)")
                 UIApplication.sharedApplication().openURL(url!)
             default: break
