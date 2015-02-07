@@ -8,7 +8,6 @@
 
 import UIKit
 import SwiftyJSON
-import Alamofire
 
 class SignupController: UIViewController {
 
@@ -42,20 +41,10 @@ class SignupController: UIViewController {
         let last = lastField.text
         let email = emailField.text
         let password  = passField.text
-
-        PeggAPI.sharedInstance.signUp(first, last: last, email: email, username: username, password: password,
-            completion: { json in
-                self.dismissViewControllerAnimated(true, completion: nil)
-            },
-            failure: { error, message in
-                let alertView = UIAlertView()
-                alertView.title = "Sign Up Failed!"
-                alertView.message = message
-                alertView.delegate = self
-                alertView.addButtonWithTitle("OK")
-                alertView.show()
-            }
-        )
+        
+        PeggAPI.signUp(first, last: last, email: email, username: username, password: password, completion: { json in
+            self.dismissViewControllerAnimated(true, completion: nil)
+        })
     }
 
     func keyboardWillShow(sender: NSNotification) {

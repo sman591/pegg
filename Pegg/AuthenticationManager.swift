@@ -8,7 +8,6 @@
 
 
 import SwiftKeychainWrapper
-import Alamofire
 import SwiftyJSON
 
 class AuthenticationManager: NSObject {

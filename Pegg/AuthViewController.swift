@@ -29,29 +29,15 @@ class AuthViewController: UIViewController {
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "keyboardWillHide:", name: UIKeyboardWillHideNotification, object: nil)
         
     }
-    
-    override func viewDidAppear(animated: Bool) {
-        super.viewDidAppear(true)
-        if (AuthenticationManager.isLoggedIn()) {
-            self.dismissViewControllerAnimated(true, completion: nil)
-        }
-    }
 
     @IBAction func loginButtonAction(sender: UIButton) {
         
         let username = userField.text
         let password = passField.text
         
-        PeggAPI.sharedInstance.authenticate(username, password: password, completion: { json in
-                self.dismissViewControllerAnimated(true, completion: nil)
-            }, failure: { error, message in
-                let alertView = UIAlertView()
-                alertView.title = "Sign In Failed!"
-                alertView.message = message
-                alertView.delegate = self
-                alertView.addButtonWithTitle("OK")
-                alertView.show()
-            })
+        PeggAPI.authenticate(username, password: password, completion: { json in
+            self.dismissViewControllerAnimated(true, completion: nil)
+        })
     }
     
     func keyboardWillShow(sender: NSNotification) {

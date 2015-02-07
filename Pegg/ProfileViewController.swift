@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import Alamofire
 import SwiftyJSON
 
 class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
@@ -26,8 +25,7 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
     var friends: [String] = []
     
     @IBAction func indexChanged(sender: UISegmentedControl) {
-        switch segmentedControl.selectedSegmentIndex
-        {
+        switch segmentedControl.selectedSegmentIndex {
         case 0:
             //Badges
             badgesTable()
@@ -58,9 +56,6 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
         badgesTable()
         
         let image = UIImageView(image: UIImage(named: "headshot"))
-
-        self.tableView.registerClass(ProfileTableViewCell.self, forCellReuseIdentifier: "cell")
-        
     }
 
     
@@ -69,7 +64,7 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
         
         editProfile.layer.cornerRadius = 5
         
-        PeggAPI.sharedInstance.loadProfile { data in
+        PeggAPI.loadProfile { data in
             self.points.text = data["points"].stringValue
             let fullName = data["first"].stringValue + " " + data["last"].stringValue
             self.name.text = fullName
