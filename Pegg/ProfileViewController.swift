@@ -19,6 +19,8 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
     @IBOutlet weak var points: UILabel!
     @IBOutlet weak var name: UILabel!
     
+    @IBOutlet weak var editProfile: UIButton!
+    
     var items: [String] = []
     var details: [String] = []
     var badges: [String] = []
@@ -64,6 +66,8 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
     
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(true)
+        
+        editProfile.layer.cornerRadius = 5
         
         let token:String! = KeychainWrapper.stringForKey("token")
         

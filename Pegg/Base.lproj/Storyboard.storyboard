@@ -283,6 +283,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="Name" destination="COW-oM-NGW" id="DQy-Uj-UqA"/>
+                        <outlet property="editProfile" destination="3G9-Sf-DLU" id="aAQ-QW-vRT"/>
                         <outlet property="points" destination="zw7-Pd-xPS" id="LiI-tb-cbW"/>
                         <outlet property="profilePictureView" destination="fVo-kL-sXV" id="JQZ-og-oKP"/>
                         <outlet property="segmentedControl" destination="wWA-Qi-FoF" id="ajd-Ne-YmV"/>
@@ -375,7 +376,9 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="login" destination="Xdh-hR-yPL" id="Rst-fA-KwN"/>
                         <outlet property="passField" destination="lLL-gL-LAb" id="4aH-1E-72x"/>
+                        <outlet property="signup" destination="fDG-29-gdg" id="Eqy-n1-xHC"/>
                         <outlet property="userField" destination="Ypp-GG-AQb" id="1Jq-AB-JFj"/>
                     </connections>
                 </viewController>
@@ -539,6 +542,7 @@
                         <outlet property="firstField" destination="uQZ-Yi-UEa" id="2gu-yF-wpX"/>
                         <outlet property="lastField" destination="P60-bk-hY4" id="Xke-uP-Anh"/>
                         <outlet property="passField" destination="igE-so-7pe" id="26C-xL-9rB"/>
+                        <outlet property="signup" destination="rR1-jo-7Jh" id="Nps-9Q-FqS"/>
                         <outlet property="userField" destination="LAg-rQ-gYx" id="1Nr-zW-VSw"/>
                     </connections>
                 </viewController>

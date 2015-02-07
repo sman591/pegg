@@ -20,8 +20,12 @@ class SignupController: UIViewController {
     @IBOutlet weak var emailField: UITextField!
     var clicked = false
     
+    @IBOutlet weak var signup: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        signup.layer.cornerRadius = 5
         
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "keyboardWillShow:", name: UIKeyboardWillShowNotification, object: nil)
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "keyboardWillHide:", name: UIKeyboardWillHideNotification, object: nil)
