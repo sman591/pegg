@@ -145,7 +145,7 @@
             </objects>
             <point key="canvasLocation" x="750" y="1048"/>
         </scene>
-        <!--Profile View Controller-->
+        <!--Profile-->
         <scene sceneID="FM9-VR-WRc">
             <objects>
                 <viewController id="KYt-wR-5Hx" customClass="ProfileViewController" customModule="Pegg" customModuleProvider="target" sceneMemberID="viewController">
@@ -198,7 +198,33 @@
                                     <segment title="Recent"/>
                                 </segments>
                                 <color key="tintColor" red="0.64209073979999998" green="0.1329203192" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <connections>
+                                    <action selector="indexChanged:" destination="KYt-wR-5Hx" eventType="valueChanged" id="kL2-oD-ghe"/>
+                                </connections>
                             </segmentedControl>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="NlC-IX-WYV">
+                                <rect key="frame" x="0.0" y="269" width="600" height="282"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell" id="Eyc-4m-wtW">
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Eyc-4m-wtW" id="0hR-hM-nzJ">
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="KYt-wR-5Hx" id="AtO-Ij-N4p"/>
+                                    <outlet property="delegate" destination="KYt-wR-5Hx" id="Wew-25-FDp"/>
+                                </connections>
+                            </tableView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mHA-1n-5Rc">
+                                <rect key="frame" x="-1" y="266" width="602" height="4"/>
+                                <color key="backgroundColor" white="0.84560032894736847" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="4" id="qqn-Tu-rt2"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -208,29 +234,28 @@
                             <constraint firstItem="wWA-Qi-FoF" firstAttribute="leading" secondItem="aIO-9m-6PB" secondAttribute="leadingMargin" constant="15" id="Esd-ea-b8i"/>
                             <constraint firstItem="wWA-Qi-FoF" firstAttribute="top" secondItem="3G9-Sf-DLU" secondAttribute="bottom" constant="30" id="QPy-ek-P8U"/>
                             <constraint firstAttribute="trailingMargin" secondItem="3G9-Sf-DLU" secondAttribute="trailing" constant="10" id="Thm-p3-cxS"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="mHA-1n-5Rc" secondAttribute="trailing" constant="-17" id="UoA-lp-wht"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="NlC-IX-WYV" secondAttribute="trailing" constant="-17" id="Yra-Ad-M6I"/>
                             <constraint firstItem="COW-oM-NGW" firstAttribute="leading" secondItem="fVo-kL-sXV" secondAttribute="trailing" constant="15" id="ZUf-ua-TUK"/>
                             <constraint firstItem="dJq-Vr-cOe" firstAttribute="top" secondItem="COW-oM-NGW" secondAttribute="bottom" constant="9" id="c3x-tZ-BNo"/>
                             <constraint firstItem="fVo-kL-sXV" firstAttribute="leading" secondItem="aIO-9m-6PB" secondAttribute="leadingMargin" constant="10" id="dur-Hd-Nr7"/>
                             <constraint firstItem="zw7-Pd-xPS" firstAttribute="top" secondItem="COW-oM-NGW" secondAttribute="bottom" constant="3" id="enI-Ml-aAI"/>
                             <constraint firstAttribute="trailingMargin" secondItem="COW-oM-NGW" secondAttribute="trailing" constant="10" id="fq0-wP-bIs"/>
+                            <constraint firstItem="NlC-IX-WYV" firstAttribute="leading" secondItem="aIO-9m-6PB" secondAttribute="leadingMargin" constant="-17" id="kFe-Kj-Dk8"/>
                             <constraint firstItem="3G9-Sf-DLU" firstAttribute="top" secondItem="COW-oM-NGW" secondAttribute="bottom" constant="40" id="nSs-eW-uQ2"/>
                             <constraint firstItem="dJq-Vr-cOe" firstAttribute="leading" secondItem="zw7-Pd-xPS" secondAttribute="trailing" constant="3" id="qIm-U5-MiA"/>
+                            <constraint firstItem="NlC-IX-WYV" firstAttribute="top" secondItem="mHA-1n-5Rc" secondAttribute="bottom" constant="-1" id="qRE-wP-VPa"/>
                             <constraint firstItem="fVo-kL-sXV" firstAttribute="top" secondItem="wKy-zb-S9c" secondAttribute="bottom" constant="10" id="rua-HY-owv"/>
+                            <constraint firstItem="40p-dc-8Uz" firstAttribute="top" secondItem="NlC-IX-WYV" secondAttribute="bottom" id="t33-hi-xAT"/>
+                            <constraint firstItem="NlC-IX-WYV" firstAttribute="top" secondItem="wWA-Qi-FoF" secondAttribute="bottom" constant="33" id="u0y-2k-viY"/>
                             <constraint firstItem="zw7-Pd-xPS" firstAttribute="leading" secondItem="fVo-kL-sXV" secondAttribute="trailing" constant="15" id="v7Y-9O-tLI"/>
+                            <constraint firstItem="mHA-1n-5Rc" firstAttribute="leading" secondItem="aIO-9m-6PB" secondAttribute="leadingMargin" constant="-17" id="yUB-rf-ZtM"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="P31-co-Yoc">
-                        <nil key="title"/>
+                    <navigationItem key="navigationItem" title="Profile" id="P31-co-Yoc">
                         <barButtonItem key="leftBarButtonItem" systemItem="add" id="Nnc-YG-szS">
                             <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         </barButtonItem>
-                        <button key="titleView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="0er-Uw-pXv">
-                            <rect key="frame" x="86" y="-168" width="429" height="380"/>
-                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            <state key="normal" image="pegg_icon_full copy_small.png">
-                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                            </state>
-                        </button>
                         <barButtonItem key="rightBarButtonItem" id="N1e-u2-Bd9">
                             <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="1nx-28-mBa">
                                 <rect key="frame" x="534" y="7" width="30" height="30"/>
@@ -246,6 +271,8 @@
                         <outlet property="Name" destination="COW-oM-NGW" id="DQy-Uj-UqA"/>
                         <outlet property="points" destination="zw7-Pd-xPS" id="LiI-tb-cbW"/>
                         <outlet property="profilePictureView" destination="fVo-kL-sXV" id="JQZ-og-oKP"/>
+                        <outlet property="segmentedControl" destination="wWA-Qi-FoF" id="ajd-Ne-YmV"/>
+                        <outlet property="tableView" destination="NlC-IX-WYV" id="ZDv-h3-CA7"/>
                         <segue destination="3sZ-39-uph" kind="presentation" identifier="logout" id="FBA-gz-dAf"/>
                     </connections>
                 </viewController>
@@ -616,8 +643,8 @@
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="kla-UQ-m5H" id="Xws-DD-4zn">
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Send us an email! Or a dick pic!" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mN4-lV-hWR">
-                                                    <rect key="frame" x="19" y="11" width="244" height="21"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Email" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mN4-lV-hWR">
+                                                    <rect key="frame" x="19" y="11" width="42" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
@@ -684,13 +711,12 @@
         <image name="gear-7" width="30" height="30"/>
         <image name="headshot" width="256" height="256"/>
         <image name="paper-map-7" width="30" height="30"/>
-        <image name="pegg_icon_full copy_small.png" width="142" height="50"/>
         <image name="pegg_icon_full.png" width="1080" height="380"/>
         <image name="pushpin-7" width="30" height="30"/>
     </resources>
     <inferredMetricsTieBreakers>
+        <segue reference="FBA-gz-dAf"/>
         <segue reference="PlQ-ku-r4R"/>
         <segue reference="ap0-KT-Qyx"/>
-        <segue reference="yFZ-hR-NHV"/>
     </inferredMetricsTieBreakers>
 </document>
