@@ -9,7 +9,7 @@
 import UIKit
 
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate {
+class AppDelegate: UIResponder, UIApplicationDelegate, PeggAPIDelegate {
 
     var window: UIWindow?
 
@@ -27,6 +27,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         UINavigationBar.appearance().titleTextAttributes = [NSForegroundColorAttributeName:UIColor.whiteColor()]
         
         return true
+    }
+    
+    func didLogOut(message: String) {
+        var alertView: UIAlertView = UIAlertView()
+        alertView.title = "Error"
+        alertView.message = message
+        alertView.delegate = self
+        alertView.addButtonWithTitle("OK")
+        alertView.show()
+        AuthenticationManager.invalidateToken()
+        let authController = UIStoryboard(name: "Storyboard", bundle: NSBundle.mainBundle()).instantiateViewControllerWithIdentifier("AuthViewController") as AuthViewController
+        self.window?.rootViewController?.presentViewController(authController, animated: true, completion: nil)
     }
 
     func applicationWillResignActive(application: UIApplication) {

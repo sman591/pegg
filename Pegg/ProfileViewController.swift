@@ -9,7 +9,6 @@
 import UIKit
 import Alamofire
 import SwiftyJSON
-import SwiftKeychainWrapper
 
 class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
@@ -63,33 +62,17 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
         self.tableView.registerClass(ProfileTableViewCell.self, forCellReuseIdentifier: "cell")
         
     }
+
     
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(true)
         
         editProfile.layer.cornerRadius = 5
         
-        let token:String! = KeychainWrapper.stringForKey("token")
-        
-        Alamofire.request(.POST, "http://friendlyu.com/pegg/me.php",
-            parameters: ["token": token, "app_id": "test"])
-            .responseJSON { (_, _, data, error) in
-                if let data: AnyObject = data {
-                    let json = JSON(data)
-                    let success = json["success"]
-                    if success {
-                        self.points.text = json["data"]["points"].stringValue
-                        let fullName = json["data"]["first"].stringValue + " " + json["data"]["last"].stringValue
-                        self.name.text = fullName
-                    } else {
-                        var alertView:UIAlertView = UIAlertView()
-                        alertView.title = "Error"
-                        alertView.message = json["data"]["message"].stringValue
-                        alertView.delegate = self
-                        alertView.addButtonWithTitle("OK")
-                        alertView.show()
-                    }
-                }
+        PeggAPI.sharedInstance.loadProfile { data in
+            self.points.text = data["points"].stringValue
+            let fullName = data["first"].stringValue + " " + data["last"].stringValue
+            self.name.text = fullName
         }
 
     }
