@@ -573,7 +573,7 @@
                             </tableViewSection>
                             <tableViewSection headerTitle="Other" id="w6U-Ld-WUu">
                                 <cells>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="uDL-s0-fO0">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" id="uDL-s0-fO0">
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="uDL-s0-fO0" id="2tj-oQ-YXg">
                                             <autoresizingMask key="autoresizingMask"/>
@@ -586,8 +586,11 @@
                                                 </label>
                                             </subviews>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="uLo-eO-Qa0" kind="show" id="ap0-KT-Qyx"/>
+                                        </connections>
                                     </tableViewCell>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="W5z-NA-a9s">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" id="W5z-NA-a9s">
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="W5z-NA-a9s" id="7BS-zC-KOf">
                                             <autoresizingMask key="autoresizingMask"/>
@@ -600,14 +603,21 @@
                                                 </label>
                                             </subviews>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="Iaq-pt-TSA" kind="show" identifier="credits" id="PlQ-ku-r4R"/>
+                                        </connections>
                                     </tableViewCell>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="o28-Rv-5uv">
+                                </cells>
+                            </tableViewSection>
+                            <tableViewSection headerTitle="Contact Us" id="OLR-a8-2Ij">
+                                <cells>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="kla-UQ-m5H">
                                         <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="o28-Rv-5uv" id="F9T-C4-TKt">
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="kla-UQ-m5H" id="Xws-DD-4zn">
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Contact Us" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b9b-yS-amd">
-                                                    <rect key="frame" x="19" y="11" width="87" height="21"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Send us an email! Or a dick pic!" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mN4-lV-hWR">
+                                                    <rect key="frame" x="19" y="11" width="244" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
@@ -626,8 +636,6 @@
                     <navigationItem key="navigationItem" title="Settings" id="dDb-rb-BSt"/>
                     <connections>
                         <segue destination="3sZ-39-uph" kind="presentation" identifier="logout" id="yFZ-hR-NHV"/>
-                        <segue destination="bfp-Cu-lXF" kind="show" identifier="credits" id="FNK-su-m8C"/>
-                        <segue destination="MlM-p1-oQv" kind="show" identifier="about" id="DhD-Pd-s1v"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lUu-hO-NKq" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -681,6 +689,8 @@
         <image name="pushpin-7" width="30" height="30"/>
     </resources>
     <inferredMetricsTieBreakers>
+        <segue reference="PlQ-ku-r4R"/>
+        <segue reference="ap0-KT-Qyx"/>
         <segue reference="yFZ-hR-NHV"/>
     </inferredMetricsTieBreakers>
 </document>
