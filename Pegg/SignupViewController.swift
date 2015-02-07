@@ -59,7 +59,7 @@ class SignupController: UIViewController {
                     } else {
                         var alertView:UIAlertView = UIAlertView()
                         alertView.title = "Sign Up Failed!"
-                        alertView.message = json["data"]["message"].stringValue
+                        alertView.message = json["message"].stringValue
                         alertView.delegate = self
                         alertView.addButtonWithTitle("OK")
                         alertView.show()
