@@ -64,14 +64,14 @@ public struct JSON {
     
     :returns: The created JSON
     */
-    public init(data:NSData, options opt: NSJSONReadingOptions = .AllowFragments, error: NSErrorPointer = nil) {
+    /* public init(data:NSData, options opt: NSJSONReadingOptions = .AllowFragments, error: NSErrorPointer = nil) {
         if let object: AnyObject = NSJSONSerialization.JSONObjectWithData(data, options: opt, error: error) {
             self.init(object)
         } else {
             self.init(NSNull())
         }
-    }
-    
+    } */
+
     /**
     Creates a JSON using the object.
     
@@ -163,7 +163,7 @@ extension JSON: SequenceType{
     }
     
     /**
-    If `type` is `.Array` or `.Dictionary`, return a generator over the elements like `Array` or `Dictionary, otherwise return a generator over empty.
+    If `type` is `.Array` or `.Dictionary`, return a generator over the elements like `Array` or `Dictionary`, otherwise return a generator over empty.
     
     :returns: Return a *generator* over the elements of this *sequence*.
     */
