@@ -11,5 +11,12 @@ import SwiftyJSON
 
 class FindViewController: UIViewController {
 
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        if (!AuthenticationManager.isLoggedIn()) {
+            (UIApplication.sharedApplication().delegate as AppDelegate).didLogOut()
+        }
+    }
+    
 }
 

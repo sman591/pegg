@@ -29,6 +29,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         return true
     }
     
+    func didLogOut() {
+        AuthenticationManager.invalidateToken()
+        let authController = UIStoryboard(name: "Storyboard", bundle: NSBundle.mainBundle()).instantiateViewControllerWithIdentifier("AuthViewController") as AuthViewController
+        self.window?.rootViewController?.presentViewController(authController, animated: true, completion: nil)
+    }
+    
     func didLogOut(message: String) {
         var alertView: UIAlertView = UIAlertView()
         alertView.title = "Error"
@@ -36,9 +42,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         alertView.delegate = self
         alertView.addButtonWithTitle("OK")
         alertView.show()
-        AuthenticationManager.invalidateToken()
-        let authController = UIStoryboard(name: "Storyboard", bundle: NSBundle.mainBundle()).instantiateViewControllerWithIdentifier("AuthViewController") as AuthViewController
-        self.window?.rootViewController?.presentViewController(authController, animated: true, completion: nil)
+        self.didLogOut()
     }
 
     func applicationWillResignActive(application: UIApplication) {

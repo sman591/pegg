@@ -53,6 +53,7 @@ class PeggAPI {
         var fullParameters = parameters ?? [String: AnyObject]()
         fullParameters["token"] = AuthenticationManager.token
         Alamofire.request(method, Constants.baseURL + route, parameters: fullParameters)
+            .validate()
             .responseJSON { request, response, data, error in
                 if let data: AnyObject = data {
                     let json = JSON(data)
