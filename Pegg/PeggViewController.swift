@@ -8,8 +8,41 @@
 
 import UIKit
 
-class PeggViewController: UIViewController {
+class PeggViewController: UIViewController, UIImagePickerControllerDelegate,UINavigationControllerDelegate  {
+    
+    let picker = UIImagePickerController()
 
+    @IBOutlet var takeAPegButton: UIButton!
+    
+    @IBAction func takeAPegg(sender: UIButton) {
+        
+        if UIImagePickerController.availableCaptureModesForCameraDevice(.Rear) != nil {
+            picker.allowsEditing = false
+            picker.sourceType = UIImagePickerControllerSourceType.Camera
+            picker.cameraCaptureMode = .Photo
+            presentViewController(picker, animated: true, completion: nil)
+        } else {
+            noCamera()
+        }
+    }
+    
+    func noCamera(){
+        let alertVC = UIAlertController(title: "No Camera", message: "Sorry, you need a camera to take a peg.", preferredStyle: .Alert)
+        let okAction = UIAlertAction(title: "OK", style:.Default, handler: nil)
+        alertVC.addAction(okAction)
+        presentViewController(alertVC, animated: true, completion: nil)
+    }
+    
+    func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [NSObject : AnyObject]) {
+        var chosenImage = info[UIImagePickerControllerOriginalImage] as UIImage
+        self.takeAPegButton.hidden = true
+        dismissViewControllerAnimated(true, completion: nil)
+    }
+    
+    func imagePickerControllerDidCancel(picker: UIImagePickerController) {
+        dismissViewControllerAnimated(true, completion: nil)
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
     }
@@ -18,10 +51,4 @@ class PeggViewController: UIViewController {
         super.viewDidAppear(true)
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-
 }
-

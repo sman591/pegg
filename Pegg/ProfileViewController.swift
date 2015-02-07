@@ -10,7 +10,7 @@ import UIKit
 import SwiftyJSON
 
 class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
-
+    
     @IBOutlet var tableView: UITableView!
     @IBOutlet weak var segmentedControl: UISegmentedControl!
     @IBOutlet weak var profilePictureView: UIImageView!
@@ -21,8 +21,10 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
     
     var items: [String] = []
     var details: [String] = []
-    var badges: [String] = []
     var friends: [String] = []
+    var friendsUsernames: [String] = []
+    var badges: [String] = []
+    var badgesDetails: [String] = []
     
     @IBAction func indexChanged(sender: UISegmentedControl) {
         switch segmentedControl.selectedSegmentIndex {
@@ -41,12 +43,28 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
     }
     
     func badgesTable() {
-        items = ["This", "Is", "Badges"]
+        
+        if (badges.count == 0) {
+            items = ["You have no badges"]
+            details = [":("]
+        } else {
+        items = badges
+        details = badgesDetails
+        }
+        
         tableView.reloadData()
     }
     
     func friendsTable() {
-        items = ["This", "Is", "Friends"]
+        
+        if (friends.count == 0) {
+            items = ["You have no friends"]
+            details = [":("]
+        } else {
+            items = friends
+            details = friendsUsernames
+        }
+        
         tableView.reloadData()
     }
     
@@ -57,7 +75,7 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
         
         let image = UIImageView(image: UIImage(named: "headshot"))
     }
-
+    
     
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(true)
@@ -65,11 +83,28 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
         editProfile.layer.cornerRadius = 5
         
         PeggAPI.loadProfile { data in
+            self.friends = []
+            self.badges = []
+            self.badgesDetails = []
+            self.badges = []
             self.points.text = data["points"].stringValue
             let fullName = data["first"].stringValue + " " + data["last"].stringValue
             self.name.text = fullName
+            
+            for (itemIndex: String, item: JSON) in data["friends"] {
+                self.friends.append(item["first"].stringValue + " " + item["last"].stringValue)
+                self.friendsUsernames.append(item["username"].stringValue)
+            }
+            
+            for (itemIndex: String, item: JSON) in data["badges"] {
+                self.badges.append(item["name"].stringValue)
+                self.badgesDetails.append(item["details"].stringValue)
+            }
+            
+            self.tableView.reloadData()
+            
         }
-
+        
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -80,13 +115,14 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
         var cell:ProfileTableViewCell = self.tableView.dequeueReusableCellWithIdentifier("cell") as ProfileTableViewCell
         
         cell.nameLabel?.text = self.items[indexPath.row]
-        //cell.detailTextLabel?.text = self.items[indexPath.row]
+        cell.descriptionLabel?.text = self.details[indexPath.row]
         
         return cell
     }
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         println("You selected cell #\(indexPath.row)!")
+        tableView.deselectRowAtIndexPath(indexPath, animated: true)
     }
     
     override func didReceiveMemoryWarning() {
