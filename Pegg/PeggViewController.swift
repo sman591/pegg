@@ -25,7 +25,7 @@ class PeggViewController: UIViewController, UIImagePickerControllerDelegate,UINa
     }
     
     func noCamera(){
-        let alertVC = UIAlertController(title: "No Camera", message: "Sorry, you need a camera to take a peg.", preferredStyle: .Alert)
+        let alertVC = UIAlertController(title: "No Camera", message: "Sorry, you need a camera to take a pegg.", preferredStyle: .Alert)
         let okAction = UIAlertAction(title: "OK", style:.Default, handler: nil)
         alertVC.addAction(okAction)
         presentViewController(alertVC, animated: true, completion: nil)
