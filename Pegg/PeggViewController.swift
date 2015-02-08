@@ -14,7 +14,7 @@ class PeggViewController: UIViewController, UIImagePickerControllerDelegate,UINa
     
     let picker = UIImagePickerController()
     
-    var pegg = Pegg(image: nil, description: nil, lat: nil, lng: nil)
+    var pegg = Pegg(image: nil, description: nil, lat: nil, lng: nil, receivers: nil, community: nil)
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -58,12 +58,10 @@ class PeggViewController: UIViewController, UIImagePickerControllerDelegate,UINa
         pegg.description = "things"
         pegg.lat = 1.3
         pegg.lng = 1.3
+        pegg.receivers = "test"
+        pegg.community = "true"
         
-        if (pegg.image == nil || pegg.description == nil || pegg.lat == nil || pegg.lng == nil) {
-            println("Failed validation")
-            return
-        }
-        PeggAPI.createPegg(pegg.image!, description: pegg.description!, lat: pegg.lat!, lng: pegg.lng!, { json in
+        PeggAPI.createPegg(pegg.image!, description: pegg.description!, lat: pegg.lat!, lng: pegg.lng!, community: pegg.community!, receivers: pegg.receivers!, { json in
             println("Uploaded!!")
         })
     }

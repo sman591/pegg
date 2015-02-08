@@ -14,4 +14,6 @@ struct Pegg {
     var description: String?
     var lat: Double?
     var lng: Double?
+    var receivers: String?
+    var community: String?
 }

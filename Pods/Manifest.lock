@@ -1,9 +1,31 @@
 PODS:
+  - AFNetworking (2.5.0):
+    - AFNetworking/NSURLConnection (= 2.5.0)
+    - AFNetworking/NSURLSession (= 2.5.0)
+    - AFNetworking/Reachability (= 2.5.0)
+    - AFNetworking/Security (= 2.5.0)
+    - AFNetworking/Serialization (= 2.5.0)
+    - AFNetworking/UIKit (= 2.5.0)
+  - AFNetworking/NSURLConnection (2.5.0):
+    - AFNetworking/Reachability
+    - AFNetworking/Security
+    - AFNetworking/Serialization
+  - AFNetworking/NSURLSession (2.5.0):
+    - AFNetworking/Reachability
+    - AFNetworking/Security
+    - AFNetworking/Serialization
+  - AFNetworking/Reachability (2.5.0)
+  - AFNetworking/Security (2.5.0)
+  - AFNetworking/Serialization (2.5.0)
+  - AFNetworking/UIKit (2.5.0):
+    - AFNetworking/NSURLConnection
+    - AFNetworking/NSURLSession
   - Alamofire (1.1.3)
   - SwiftKeychainWrapper (1.0.5)
   - SwiftyJSON (2.1.3)
 
 DEPENDENCIES:
+  - AFNetworking (~> 2.4)
   - Alamofire (= 1.1.3)
   - SwiftKeychainWrapper (from `https://github.com/jrendel/SwiftKeychainWrapper.git`, branch `develop`)
   - SwiftyJSON (from `https://github.com/sman591/SwiftyJSON.git`, branch `compiler-segfault-workaround`)
@@ -25,6 +47,7 @@ CHECKOUT OPTIONS:
     :git: https://github.com/sman591/SwiftyJSON.git
 
 SPEC CHECKSUMS:
+  AFNetworking: 0f54cb5d16ce38c1b76948faffb8d5fb705021c7
   Alamofire: 4337b1484a062640f8caf6e96f03a511bf137536
   SwiftKeychainWrapper: 1a89e3d70852a2766001c73575f133a2de6954c5
   SwiftyJSON: a561c2a840121085bec8a2dfeac97a360fc66901
