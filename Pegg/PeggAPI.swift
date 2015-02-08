@@ -58,7 +58,7 @@ class PeggAPI {
         
         let manager = AFHTTPRequestOperationManager()
         
-        let url = "http://friendlyu.com/pegg/peggs/test.php"
+        let url = "http://friendlyu.com/pegg/peggs/sendPegg.php"
         
         var fileURL = UIImageJPEGRepresentation(image, 0.7)
         
@@ -74,7 +74,6 @@ class PeggAPI {
         
         manager.POST( url, parameters: params,
             constructingBodyWithBlock: { (data: AFMultipartFormData!) in
-                println("")
                 data.appendPartWithFileData(fileURL, name: "file", fileName: "file.jpg", mimeType: "image/jpeg")
             },
             success: { (operation: AFHTTPRequestOperation!, responseObject: AnyObject!) in
