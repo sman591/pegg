@@ -12,6 +12,6 @@ import Foundation
 struct Pegg {
     var image: UIImage?
     var description: String?
-    var latitude: Double?
-    var longitude: Double?
+    var lat: Double?
+    var lng: Double?
 }

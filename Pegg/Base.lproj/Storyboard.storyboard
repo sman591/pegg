@@ -112,11 +112,14 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AtF-2u-FuK">
-                                <rect key="frame" x="256" y="511" width="89" height="30"/>
-                                <state key="normal" title="Submit Pegg">
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AtF-2u-FuK">
+                                <rect key="frame" x="263" y="511" width="76" height="30"/>
+                                <state key="normal" title="Send Pegg">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="sendPegg:" destination="8rJ-Kc-sve" eventType="touchUpInside" id="iBd-La-rJZ"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
@@ -872,7 +875,7 @@
         <image name="settings" width="42" height="42"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="FBA-gz-dAf"/>
+        <segue reference="toh-Ip-N6b"/>
         <segue reference="PlQ-ku-r4R"/>
         <segue reference="MfL-AJ-kp5"/>
     </inferredMetricsTieBreakers>

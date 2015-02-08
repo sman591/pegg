@@ -14,7 +14,7 @@ class PeggViewController: UIViewController, UIImagePickerControllerDelegate,UINa
     
     let picker = UIImagePickerController()
     
-    var pegg = Pegg(image: nil, description: nil, latitude: nil, longitude: nil)
+    var pegg = Pegg(image: nil, description: nil, lat: nil, lng: nil)
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,7 +25,6 @@ class PeggViewController: UIViewController, UIImagePickerControllerDelegate,UINa
     }
     
     func takeAPegg() {
-
         if UIImagePickerController.availableCaptureModesForCameraDevice(.Rear) != nil {
             picker.allowsEditing = false
             picker.sourceType = .Camera
@@ -52,6 +51,16 @@ class PeggViewController: UIViewController, UIImagePickerControllerDelegate,UINa
     }
     func imagePickerControllerDidCancel(picker: UIImagePickerController) {
         dismissViewControllerAnimated(true, completion: nil)
+    }
+    
+    @IBAction func sendPegg(sender: UIButton) {
+        if (pegg.image == nil || pegg.description == nil || pegg.lat == nil || pegg.lng == nil) {
+            println("Failed validation")
+            return
+        }
+        PeggAPI.createPegg(pegg.image!, description: pegg.description!, lat: pegg.lat!, lng: pegg.lng!, { json in
+            println("Uploaded!!")
+        })
     }
     
     override func viewDidAppear(animated: Bool) {
