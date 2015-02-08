@@ -16,7 +16,15 @@ class PeggViewController: UIViewController, UIImagePickerControllerDelegate,UINa
     
     var pegg = Pegg(image: nil, description: nil, latitude: nil, longitude: nil)
 
-    @IBAction func takeAPegg(sender: UIButton) {
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        imageView.userInteractionEnabled = true
+        var tapGesture = UITapGestureRecognizer(target: self, action: Selector("takeAPegg"))
+        imageView.addGestureRecognizer(tapGesture)
+    }
+    
+    func takeAPegg() {
 
         if UIImagePickerController.availableCaptureModesForCameraDevice(.Rear) != nil {
             picker.allowsEditing = false
@@ -45,12 +53,11 @@ class PeggViewController: UIViewController, UIImagePickerControllerDelegate,UINa
         dismissViewControllerAnimated(true, completion: nil)
     }
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-    }
-    
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(true)
+        if pegg.image == nil {
+            takeAPegg()
+        }
     }
 
 }
