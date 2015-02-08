@@ -82,27 +82,6 @@ class PeggAPI {
             failure: { (operation: AFHTTPRequestOperation!, error: NSError!) in
         })
         
-        //
-        //
-        //
-        //        var parameters = "?token=" + AuthenticationManager.token
-        //        parameters += "&description=" + description
-        //        parameters += "&lat=" + String(format:"%.1f", lat)
-        //        parameters += "&lng=" + String(format:"%.1f", lng)
-        //        parameters += "&receivers=" + "People"
-        //
-        //        let imageData = UIImageJPEGRepresentation(image, 1.0)
-        //
-        //        Alamofire.upload(.POST, Constants.baseURL + "peggs/sendPegg.php", imageData)
-        //            .progress { (bytesWritten, totalBytesWritten, totalBytesExpectedToWrite) in
-        //                println("\(totalBytesWritten) / \(totalBytesExpectedToWrite)")
-        //            }
-        //            .responseJSON { (request, response, JSON, error) in
-        //                println("REQUEST \(request)")
-        //                println("RESPONSE \(response)")
-        //                println("JSON \(JSON)")
-        //                println("ERROR \(error)")
-        //        }
     }
     
     class func makeRequest(method: Alamofire.Method, route: String, parameters: [String: AnyObject]? = nil, completion: PeggAPISuccess? = nil, failure: PeggAPIFailure? = nil) {
