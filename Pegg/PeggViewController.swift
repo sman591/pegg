@@ -17,10 +17,10 @@ class PeggViewController: UIViewController, UIImagePickerControllerDelegate,UINa
     var pegg = Pegg(image: nil, description: nil, latitude: nil, longitude: nil)
 
     @IBAction func takeAPegg(sender: UIButton) {
-        
+
         if UIImagePickerController.availableCaptureModesForCameraDevice(.Rear) != nil {
             picker.allowsEditing = false
-            picker.sourceType = UIImagePickerControllerSourceType.Camera
+            picker.sourceType = .Camera
             picker.cameraCaptureMode = .Photo
             picker.delegate = self
             presentViewController(picker, animated: true, completion: nil)
