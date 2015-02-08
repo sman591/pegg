@@ -34,9 +34,6 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
         case 1:
             //Friends
             friendsTable()
-        case 2:
-            //Recent
-            friendsTable()
         default:
             break
         }

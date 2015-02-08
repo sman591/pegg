@@ -269,7 +269,6 @@
                                 <segments>
                                     <segment title="Badges"/>
                                     <segment title="Friends"/>
-                                    <segment title="Recent"/>
                                 </segments>
                                 <color key="tintColor" red="0.64209073979999998" green="0.1329203192" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <connections>
@@ -819,8 +818,8 @@
         <image name="settings" width="42" height="42"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="toh-Ip-N6b"/>
-        <segue reference="PlQ-ku-r4R"/>
+        <segue reference="FBA-gz-dAf"/>
         <segue reference="ap0-KT-Qyx"/>
+        <segue reference="PlQ-ku-r4R"/>
     </inferredMetricsTieBreakers>
 </document>
