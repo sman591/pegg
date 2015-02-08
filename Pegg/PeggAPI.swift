@@ -60,14 +60,13 @@ class PeggAPI {
             "description": description,
             "lat": String(format:"%.1f", lat),
             "lng": String(format:"%.1f", lng),
-            "receivers": "People",
-            "community": "true"
+            "receivers": "People"
         ]
         
         let imageData = UIImageJPEGRepresentation(image, 1.0)
         let urlRequest = self.urlRequestWithComponents(Constants.baseURL + "peggs/sendPegg.php", parameters: parameters, imageData: imageData)
         
-        Alamofire.upload(urlRequest.0, urlRequest.1)
+        Alamofire.upload(.POST, Constants.baseURL + "peggs/sendPegg.php", imageData)
             .progress { (bytesWritten, totalBytesWritten, totalBytesExpectedToWrite) in
                 println("\(totalBytesWritten) / \(totalBytesExpectedToWrite)")
             }

@@ -54,6 +54,11 @@ class PeggViewController: UIViewController, UIImagePickerControllerDelegate,UINa
     }
     
     @IBAction func sendPegg(sender: UIButton) {
+        
+        pegg.description = "things"
+        pegg.lat = 1.3
+        pegg.lng = 1.3
+        
         if (pegg.image == nil || pegg.description == nil || pegg.lat == nil || pegg.lng == nil) {
             println("Failed validation")
             return
