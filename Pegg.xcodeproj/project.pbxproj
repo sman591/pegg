@@ -15,6 +15,7 @@
 		1733FA9D1A830CC0003C7773 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1733FA9B1A830CC0003C7773 /* LaunchScreen.xib */; };
 		1733FAA91A830CC0003C7773 /* PeggTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1733FAA81A830CC0003C7773 /* PeggTests.swift */; };
 		1733FAB51A83241D003C7773 /* AuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1733FAB41A83241D003C7773 /* AuthViewController.swift */; };
+		17CA66B71A87058800FA5591 /* AddFriendViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17CA66B61A87058800FA5591 /* AddFriendViewController.swift */; };
 		17F75EAA1A86E4D30045B4F8 /* Pegg.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17F75EA91A86E4D30045B4F8 /* Pegg.swift */; };
 		17F968EE1A85CD87003637B7 /* AuthenticationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17F968ED1A85CD87003637B7 /* AuthenticationManager.swift */; };
 		17F968F21A85D8DD003637B7 /* PeggAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17F968F11A85D8DD003637B7 /* PeggAPI.swift */; };
@@ -51,6 +52,7 @@
 		1733FAA71A830CC0003C7773 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1733FAA81A830CC0003C7773 /* PeggTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeggTests.swift; sourceTree = "<group>"; };
 		1733FAB41A83241D003C7773 /* AuthViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthViewController.swift; sourceTree = "<group>"; };
+		17CA66B61A87058800FA5591 /* AddFriendViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddFriendViewController.swift; sourceTree = "<group>"; };
 		17F75EA91A86E4D30045B4F8 /* Pegg.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Pegg.swift; sourceTree = "<group>"; };
 		17F968ED1A85CD87003637B7 /* AuthenticationManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthenticationManager.swift; sourceTree = "<group>"; };
 		17F968F11A85D8DD003637B7 /* PeggAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PeggAPI.swift; sourceTree = "<group>"; };
@@ -113,6 +115,7 @@
 			children = (
 				17E45C661A83590E00642FC4 /* Assets */,
 				1733FA901A830CC0003C7773 /* AppDelegate.swift */,
+				17CA66B61A87058800FA5591 /* AddFriendViewController.swift */,
 				1733FAB41A83241D003C7773 /* AuthViewController.swift */,
 				549416C11A85A93700C28868 /* ProfileTableViewCell.swift */,
 				1733FA921A830CC0003C7773 /* FindViewController.swift */,
@@ -338,6 +341,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				17CA66B71A87058800FA5591 /* AddFriendViewController.swift in Sources */,
 				17F75EAA1A86E4D30045B4F8 /* Pegg.swift in Sources */,
 				544E41D71A8377B50052C50D /* SignupViewController.swift in Sources */,
 				17F968F21A85D8DD003637B7 /* PeggAPI.swift in Sources */,
