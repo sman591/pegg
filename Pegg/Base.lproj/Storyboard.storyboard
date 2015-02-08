@@ -55,7 +55,7 @@
         <scene sceneID="I9f-0n-BbQ">
             <objects>
                 <navigationController id="974-Ij-ncE" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Find" id="Cw3-Wf-N5M"/>
+                    <tabBarItem key="tabBarItem" title="Find" image="map" id="Cw3-Wf-N5M"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="ucK-4U-mFI">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -188,7 +188,7 @@
         <scene sceneID="aOv-7s-kTw">
             <objects>
                 <navigationController id="n7J-AA-Wxx" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Pegg" id="qx5-uN-2Sd"/>
+                    <tabBarItem key="tabBarItem" title="Pegg" image="camera" id="qx5-uN-2Sd"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="NhY-Zv-tcP">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -205,7 +205,7 @@
         <scene sceneID="h95-Kj-D9c">
             <objects>
                 <navigationController id="SZe-2g-GOH" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Me" image="circle-user-7" id="a1x-Ae-TU2"/>
+                    <tabBarItem key="tabBarItem" title="Me" image="me" id="a1x-Ae-TU2"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="Qp7-au-pCh">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -659,7 +659,7 @@
         <scene sceneID="qUq-d0-zrI">
             <objects>
                 <navigationController title="Settings" id="pP5-Zn-AMJ" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Settings" image="gear-7" id="e08-8N-ei2"/>
+                    <tabBarItem key="tabBarItem" title="Settings" image="settings" id="e08-8N-ei2"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="d9y-KP-grL">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -808,12 +808,14 @@
     </scenes>
     <resources>
         <image name="bell_small.png" width="40" height="37"/>
-        <image name="circle-user-7" width="30" height="30"/>
-        <image name="gear-7" width="30" height="30"/>
+        <image name="camera" width="32" height="32"/>
         <image name="headshot" width="256" height="256"/>
+        <image name="map" width="42" height="42"/>
+        <image name="me" width="100" height="100"/>
         <image name="paper-map-7" width="30" height="30"/>
         <image name="pegg_icon_full.png" width="1080" height="380"/>
         <image name="pushpin-7" width="30" height="30"/>
+        <image name="settings" width="42" height="42"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="toh-Ip-N6b"/>
