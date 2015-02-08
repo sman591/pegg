@@ -22,6 +22,7 @@ class PeggViewController: UIViewController, UIImagePickerControllerDelegate,UINa
             picker.allowsEditing = false
             picker.sourceType = UIImagePickerControllerSourceType.Camera
             picker.cameraCaptureMode = .Photo
+            picker.delegate = self
             presentViewController(picker, animated: true, completion: nil)
         } else {
             noCamera()
@@ -29,17 +30,16 @@ class PeggViewController: UIViewController, UIImagePickerControllerDelegate,UINa
     }
     
     func noCamera(){
-        let alertVC = UIAlertController(title: "No Camera", message: "Sorry, you need a camera to take a pegg.", preferredStyle: .Alert)
+        let alertVC = UIAlertController(title: "No Camera", message: "Sorry, you need a camera.", preferredStyle: .Alert)
         let okAction = UIAlertAction(title: "OK", style:.Default, handler: nil)
         alertVC.addAction(okAction)
         presentViewController(alertVC, animated: true, completion: nil)
     }
     
-    //What to do when the picker returns with a photo
     func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [NSObject : AnyObject]) {
-        self.pegg.image = info[UIImagePickerControllerOriginalImage] as? UIImage
-        self.imageView.image = self.pegg.image
         dismissViewControllerAnimated(true, completion: nil)
+        let img = info[UIImagePickerControllerOriginalImage] as? UIImage
+        imageView.image = img
     }
     func imagePickerControllerDidCancel(picker: UIImagePickerController) {
         dismissViewControllerAnimated(true, completion: nil)
