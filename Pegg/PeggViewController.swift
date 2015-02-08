@@ -9,8 +9,12 @@
 import UIKit
 
 class PeggViewController: UIViewController, UIImagePickerControllerDelegate,UINavigationControllerDelegate  {
+
+    @IBOutlet weak var imageView: UIImageView!
     
     let picker = UIImagePickerController()
+    
+    var pegg = Pegg(image: nil, description: nil, latitude: nil, longitude: nil)
 
     @IBAction func takeAPegg(sender: UIButton) {
         
@@ -33,7 +37,8 @@ class PeggViewController: UIViewController, UIImagePickerControllerDelegate,UINa
     
     //What to do when the picker returns with a photo
     func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [NSObject : AnyObject]) {
-        var chosenImage = info[UIImagePickerControllerOriginalImage] as UIImage
+        self.pegg.image = info[UIImagePickerControllerOriginalImage] as? UIImage
+        self.imageView.image = self.pegg.image
         dismissViewControllerAnimated(true, completion: nil)
     }
     func imagePickerControllerDidCancel(picker: UIImagePickerController) {

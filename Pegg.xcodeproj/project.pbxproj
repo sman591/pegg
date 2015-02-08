@@ -15,6 +15,7 @@
 		1733FA9D1A830CC0003C7773 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1733FA9B1A830CC0003C7773 /* LaunchScreen.xib */; };
 		1733FAA91A830CC0003C7773 /* PeggTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1733FAA81A830CC0003C7773 /* PeggTests.swift */; };
 		1733FAB51A83241D003C7773 /* AuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1733FAB41A83241D003C7773 /* AuthViewController.swift */; };
+		17F75EAA1A86E4D30045B4F8 /* Pegg.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17F75EA91A86E4D30045B4F8 /* Pegg.swift */; };
 		17F968EE1A85CD87003637B7 /* AuthenticationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17F968ED1A85CD87003637B7 /* AuthenticationManager.swift */; };
 		17F968F21A85D8DD003637B7 /* PeggAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17F968F11A85D8DD003637B7 /* PeggAPI.swift */; };
 		346F5B1837C8D21822BBFEDA /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6617710EAD000F0246D4CAFE /* Pods.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
@@ -50,6 +51,7 @@
 		1733FAA71A830CC0003C7773 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1733FAA81A830CC0003C7773 /* PeggTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeggTests.swift; sourceTree = "<group>"; };
 		1733FAB41A83241D003C7773 /* AuthViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthViewController.swift; sourceTree = "<group>"; };
+		17F75EA91A86E4D30045B4F8 /* Pegg.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Pegg.swift; sourceTree = "<group>"; };
 		17F968ED1A85CD87003637B7 /* AuthenticationManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthenticationManager.swift; sourceTree = "<group>"; };
 		17F968F11A85D8DD003637B7 /* PeggAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PeggAPI.swift; sourceTree = "<group>"; };
 		540CA4DE1A831F5600A384C1 /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
@@ -119,6 +121,7 @@
 				544E41D61A8377B50052C50D /* SignupViewController.swift */,
 				540CA4DE1A831F5600A384C1 /* ProfileViewController.swift */,
 				1733FA941A830CC0003C7773 /* PeggViewController.swift */,
+				17F75EA91A86E4D30045B4F8 /* Pegg.swift */,
 				17F968F11A85D8DD003637B7 /* PeggAPI.swift */,
 				1733FA991A830CC0003C7773 /* Images.xcassets */,
 				1733FA8E1A830CC0003C7773 /* Supporting Files */,
@@ -335,6 +338,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				17F75EAA1A86E4D30045B4F8 /* Pegg.swift in Sources */,
 				544E41D71A8377B50052C50D /* SignupViewController.swift in Sources */,
 				17F968F21A85D8DD003637B7 /* PeggAPI.swift in Sources */,
 				549416C21A85A93700C28868 /* ProfileTableViewCell.swift in Sources */,

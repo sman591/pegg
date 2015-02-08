@@ -80,7 +80,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="headshot" translatesAutoresizingMaskIntoConstraints="NO" id="hEL-dy-9XW">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="hEL-dy-9XW">
                                 <rect key="frame" x="26" y="79" width="125" height="166"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="125" id="D4v-pS-Dix"/>
@@ -177,6 +177,7 @@
                     <tabBarItem key="tabBarItem" title="Pegg" image="pushpin-7" id="cPa-gy-q4n"/>
                     <navigationItem key="navigationItem" title="Pegg" id="W1d-oi-yCm"/>
                     <connections>
+                        <outlet property="imageView" destination="hEL-dy-9XW" id="x05-an-H9O"/>
                         <segue destination="3sZ-39-uph" kind="presentation" identifier="logout" id="toh-Ip-N6b"/>
                     </connections>
                 </viewController>
@@ -808,10 +809,10 @@
     </scenes>
     <resources>
         <image name="bell_small.png" width="40" height="37"/>
-        <image name="camera" width="32" height="32"/>
+        <image name="camera" width="42" height="42"/>
         <image name="headshot" width="256" height="256"/>
         <image name="map" width="42" height="42"/>
-        <image name="me" width="100" height="100"/>
+        <image name="me" width="42" height="42"/>
         <image name="paper-map-7" width="30" height="30"/>
         <image name="pegg_icon_full.png" width="1080" height="380"/>
         <image name="pushpin-7" width="30" height="30"/>
