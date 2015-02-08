@@ -85,9 +85,10 @@ class PeggViewController: UIViewController, UIImagePickerControllerDelegate, UIN
         dismissViewControllerAnimated(true, completion: nil)
     }
     
-    @IBAction func cancel(sender: UIButton) {
+    @IBAction func cancel(sender: UIBarButtonItem) {
         pegg = Pegg(image: nil, description: nil, lat: nil, lng: nil, receivers: nil, community: nil)
         imageView.image = nil
+        takeAPegg()
     }
     
     @IBAction func sendPegg(sender: UIButton) {
