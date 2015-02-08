@@ -9,12 +9,15 @@
 import UIKit
 import CoreLocation
 
-class PeggViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, CLLocationManagerDelegate  {
+class PeggViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, CLLocationManagerDelegate,
+    UITextViewDelegate {
     
     @IBOutlet weak var imageView: UIImageView!
+    @IBOutlet weak var textView: UITextView!
     
     let picker = UIImagePickerController()
     let locationManager = CLLocationManager()
+    var placeholderLabel : UILabel!
     
     var pegg = Pegg(image: nil, description: nil, lat: nil, lng: nil, receivers: nil, community: nil)
     
@@ -36,6 +39,17 @@ class PeggViewController: UIViewController, UIImagePickerControllerDelegate, UIN
         imageView.userInteractionEnabled = true
         var tapGesture = UITapGestureRecognizer(target: self, action: Selector("takeAPegg"))
         imageView.addGestureRecognizer(tapGesture)
+        
+        // Source: http://stackoverflow.com/questions/27652227/text-view-placeholder-swift
+        textView.delegate = self
+        placeholderLabel = UILabel()
+        placeholderLabel.text = "Enter description..."
+        placeholderLabel.font = UIFont.italicSystemFontOfSize(textView.font.pointSize)
+        placeholderLabel.sizeToFit()
+        textView.addSubview(placeholderLabel)
+        placeholderLabel.frame.origin = CGPointMake(5, textView.font.pointSize / 2)
+        placeholderLabel.textColor = UIColor(white: 0, alpha: 0.5)
+        placeholderLabel.hidden = countElements(textView.text) != 0
     }
     
     func locationManager(manager: CLLocationManager!, didFailWithError error: NSError!) {
@@ -111,6 +125,10 @@ class PeggViewController: UIViewController, UIImagePickerControllerDelegate, UIN
         if pegg.image == nil {
             takeAPegg()
         }
+    }
+    
+    func textViewDidChange(textView: UITextView) {
+        placeholderLabel.hidden = countElements(textView.text) != 0
     }
     
 }
