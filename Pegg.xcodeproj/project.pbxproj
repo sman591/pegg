@@ -15,6 +15,8 @@
 		1733FA9D1A830CC0003C7773 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1733FA9B1A830CC0003C7773 /* LaunchScreen.xib */; };
 		1733FAA91A830CC0003C7773 /* PeggTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1733FAA81A830CC0003C7773 /* PeggTests.swift */; };
 		1733FAB51A83241D003C7773 /* AuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1733FAB41A83241D003C7773 /* AuthViewController.swift */; };
+		175BAE6D1A8812FF00892BE8 /* Badge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 175BAE6C1A8812FF00892BE8 /* Badge.swift */; };
+		178CC0661A88091A00271E39 /* Friend.swift in Sources */ = {isa = PBXBuildFile; fileRef = 178CC0651A88091A00271E39 /* Friend.swift */; };
 		17CA66B71A87058800FA5591 /* AddFriendViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17CA66B61A87058800FA5591 /* AddFriendViewController.swift */; };
 		17F75EAA1A86E4D30045B4F8 /* Pegg.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17F75EA91A86E4D30045B4F8 /* Pegg.swift */; };
 		17F968EE1A85CD87003637B7 /* AuthenticationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17F968ED1A85CD87003637B7 /* AuthenticationManager.swift */; };
@@ -52,6 +54,8 @@
 		1733FAA71A830CC0003C7773 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1733FAA81A830CC0003C7773 /* PeggTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeggTests.swift; sourceTree = "<group>"; };
 		1733FAB41A83241D003C7773 /* AuthViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthViewController.swift; sourceTree = "<group>"; };
+		175BAE6C1A8812FF00892BE8 /* Badge.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Badge.swift; sourceTree = "<group>"; };
+		178CC0651A88091A00271E39 /* Friend.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Friend.swift; sourceTree = "<group>"; };
 		17CA66B61A87058800FA5591 /* AddFriendViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddFriendViewController.swift; sourceTree = "<group>"; };
 		17F75EA91A86E4D30045B4F8 /* Pegg.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Pegg.swift; sourceTree = "<group>"; };
 		17F968ED1A85CD87003637B7 /* AuthenticationManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthenticationManager.swift; sourceTree = "<group>"; };
@@ -114,6 +118,7 @@
 			isa = PBXGroup;
 			children = (
 				17E45C661A83590E00642FC4 /* Assets */,
+				175BAE6E1A8815F500892BE8 /* Models */,
 				1733FA901A830CC0003C7773 /* AppDelegate.swift */,
 				17CA66B61A87058800FA5591 /* AddFriendViewController.swift */,
 				1733FAB41A83241D003C7773 /* AuthViewController.swift */,
@@ -124,7 +129,6 @@
 				544E41D61A8377B50052C50D /* SignupViewController.swift */,
 				540CA4DE1A831F5600A384C1 /* ProfileViewController.swift */,
 				1733FA941A830CC0003C7773 /* PeggViewController.swift */,
-				17F75EA91A86E4D30045B4F8 /* Pegg.swift */,
 				17F968F11A85D8DD003637B7 /* PeggAPI.swift */,
 				1733FA991A830CC0003C7773 /* Images.xcassets */,
 				1733FA8E1A830CC0003C7773 /* Supporting Files */,
@@ -156,6 +160,16 @@
 				1733FAA71A830CC0003C7773 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		175BAE6E1A8815F500892BE8 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				175BAE6C1A8812FF00892BE8 /* Badge.swift */,
+				178CC0651A88091A00271E39 /* Friend.swift */,
+				17F75EA91A86E4D30045B4F8 /* Pegg.swift */,
+			);
+			name = Models;
 			sourceTree = "<group>";
 		};
 		17E45C661A83590E00642FC4 /* Assets */ = {
@@ -348,10 +362,12 @@
 				549416C21A85A93700C28868 /* UserTableViewCell.swift in Sources */,
 				1733FA951A830CC0003C7773 /* PeggViewController.swift in Sources */,
 				17F968EE1A85CD87003637B7 /* AuthenticationManager.swift in Sources */,
+				175BAE6D1A8812FF00892BE8 /* Badge.swift in Sources */,
 				54B8357C1A840E3B00C1105A /* SettingsViewController.swift in Sources */,
 				1733FA911A830CC0003C7773 /* AppDelegate.swift in Sources */,
 				1733FAB51A83241D003C7773 /* AuthViewController.swift in Sources */,
 				540CA4DF1A831F5600A384C1 /* ProfileViewController.swift in Sources */,
+				178CC0661A88091A00271E39 /* Friend.swift in Sources */,
 				1733FA931A830CC0003C7773 /* FindViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

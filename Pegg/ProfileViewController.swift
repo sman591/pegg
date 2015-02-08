@@ -19,57 +19,27 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
     
     @IBOutlet weak var editProfile: UIButton!
     
-    var items: [String] = []
-    var details: [String] = []
-    var friends: [String] = []
-    var friendsUsernames: [String] = []
-    var badges: [String] = []
-    var badgesDetails: [String] = []
+    var friends = [Friend]()
+    var badges = [Badge]()
+    var currentTableView = "badges"
     
     @IBAction func indexChanged(sender: UISegmentedControl) {
         switch segmentedControl.selectedSegmentIndex {
         case 0:
             //Badges
-            badgesTable()
+            currentTableView = "badges"
         case 1:
             //Friends
-            friendsTable()
+            currentTableView = "friends"
         default:
             break
         }
-    }
-    
-    func badgesTable() {
-        
-        if (badges.count == 0) {
-            items = ["You have no badges"]
-            details = [":("]
-        } else {
-        items = badges
-        details = badgesDetails
-        }
-        
-        tableView.reloadData()
-    }
-    
-    func friendsTable() {
-        
-        if (friends.count == 0) {
-            items = ["You have no friends"]
-            details = [":("]
-        } else {
-            items = friends
-            details = friendsUsernames
-        }
-        
+        println(badges)
         tableView.reloadData()
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        badgesTable()
-        
         let image = UIImageView(image: UIImage(named: "headshot"))
     }
     
@@ -82,20 +52,32 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
         PeggAPI.loadProfile { data in
             self.friends = []
             self.badges = []
-            self.badgesDetails = []
             self.badges = []
             self.points.text = data["points"].stringValue
             let fullName = data["first"].stringValue + " " + data["last"].stringValue
             self.name.text = fullName
             
             for (itemIndex: String, item: JSON) in data["friends"] {
-                self.friends.append(item["first"].stringValue + " " + item["last"].stringValue)
-                self.friendsUsernames.append(item["username"].stringValue)
+                self.friends.append(Friend(
+                    username: item["username"].stringValue,
+                    first: item["first"].stringValue,
+                    last: item["last"].stringValue
+                ))
             }
             
+            if (self.friends.count == 0) {
+                self.friends.append(Friend(username: ":(", first: "You have no friends", last: ""))
+            }
+
             for (itemIndex: String, item: JSON) in data["badges"] {
-                self.badges.append(item["name"].stringValue)
-                self.badgesDetails.append(item["details"].stringValue)
+                self.badges.append(Badge(
+                    name: item["name"].stringValue,
+                    details: item["details"].stringValue
+                ))
+            }
+            
+            if (self.badges.count == 0) {
+                self.badges.append(Badge(name: "You have no badges", details: ":("))
             }
             
             self.tableView.reloadData()
@@ -105,14 +87,25 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return self.items.count;
+        if (currentTableView == "badges") {
+            return self.badges.count
+        }
+        else {
+            return self.friends.count
+        }
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         var cell = self.tableView.dequeueReusableCellWithIdentifier("cell") as UserTableViewCell
         
-        cell.nameLabel?.text = self.items[indexPath.row]
-        cell.descriptionLabel?.text = self.details[indexPath.row]
+        if (currentTableView == "badges") {
+            cell.nameLabel?.text = self.badges[indexPath.row].name
+            cell.descriptionLabel?.text = self.badges[indexPath.row].details
+        }
+        else {
+            cell.nameLabel?.text = self.friends[indexPath.row].fullName()
+            cell.descriptionLabel?.text = self.friends[indexPath.row].username
+        }
         
         return cell
     }

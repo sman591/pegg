@@ -13,8 +13,7 @@ class AddFriendViewController: UIViewController, UISearchBarDelegate, UITableVie
 
     @IBOutlet weak var tableView: UITableView!
     
-    var friends: [String] = []
-    var friendsUsernames: [String] = []
+    var friends = [Friend]()
     
     @IBAction func cancelButton(sender: AnyObject) {
         self.dismissViewControllerAnimated(true, completion: nil)
@@ -40,10 +39,12 @@ class AddFriendViewController: UIViewController, UISearchBarDelegate, UITableVie
             completion: { json in
                 println(json)
                 self.friends = []
-                self.friendsUsernames = []
                 for (friendIndex: String, friend: JSON) in json {
-                    self.friends.append(friend["first"].stringValue + " " + friend["last"].stringValue)
-                    self.friendsUsernames.append(friend["username"].stringValue)
+                    self.friends.append(Friend(
+                        username: friend["username"].stringValue,
+                        first: friend["first"].stringValue,
+                        last: friend["last"].stringValue
+                    ))
                 }
                 self.tableView.reloadData()
             }, failure: { json in
@@ -57,16 +58,16 @@ class AddFriendViewController: UIViewController, UISearchBarDelegate, UITableVie
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         var cell = self.tableView.dequeueReusableCellWithIdentifier("cell") as UserTableViewCell
+        let friend = self.friends[indexPath.row]
         
-        cell.nameLabel?.text = self.friends[indexPath.row]
-        cell.descriptionLabel?.text = self.friendsUsernames[indexPath.row]
+        cell.nameLabel?.text = friend.fullName()
+        cell.descriptionLabel?.text = friend.username
         
         return cell
     }
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        println("You selected cell #\(indexPath.row)!")
-        PeggAPI.addFriend(friendsUsernames[indexPath.row],
+        PeggAPI.addFriend(friends[indexPath.row].username,
             completion: { json in
                 self.dismissViewControllerAnimated(true, completion: nil)
             }, failure: { json in
