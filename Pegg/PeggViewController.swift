@@ -7,21 +7,48 @@
 //
 
 import UIKit
+import CoreLocation
 
-class PeggViewController: UIViewController, UIImagePickerControllerDelegate,UINavigationControllerDelegate  {
-
+class PeggViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, CLLocationManagerDelegate  {
+    
     @IBOutlet weak var imageView: UIImageView!
     
     let picker = UIImagePickerController()
+    let locationManager = CLLocationManager()
     
     var pegg = Pegg(image: nil, description: nil, lat: nil, lng: nil, receivers: nil, community: nil)
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        if (CLLocationManager.locationServicesEnabled()) {
+            locationManager.delegate = self
+            locationManager.desiredAccuracy = kCLLocationAccuracyBest
+            locationManager.requestWhenInUseAuthorization()
+            locationManager.startUpdatingLocation()
+        } else {
+            let alertVC = UIAlertController(title: "Error", message: "Location services are not enabled. Please enable them in your settings.", preferredStyle: .Alert)
+            let okAction = UIAlertAction(title: "OK", style:.Default, handler: nil)
+            alertVC.addAction(okAction)
+            presentViewController(alertVC, animated: true, completion: nil)
+        }
         
         imageView.userInteractionEnabled = true
         var tapGesture = UITapGestureRecognizer(target: self, action: Selector("takeAPegg"))
         imageView.addGestureRecognizer(tapGesture)
+    }
+    
+    func locationManager(manager: CLLocationManager!, didFailWithError error: NSError!) {
+        locationManager.stopUpdatingLocation()
+        if ((error) != nil) {
+            print(error)
+        }
+    }
+    
+    func locationManager(manager: CLLocationManager!, didUpdateLocations locations: [AnyObject]!) {
+        var locationArray = locations as NSArray
+        var locationObj = locationArray.lastObject as CLLocation
+        var coord = locationObj.coordinate
     }
     
     func takeAPegg() {
@@ -48,7 +75,12 @@ class PeggViewController: UIViewController, UIImagePickerControllerDelegate,UINa
         let img = info[UIImagePickerControllerOriginalImage] as? UIImage
         pegg.image = img
         imageView.image = pegg.image
+        
+        let coord = locationManager.location.coordinate
+        pegg.lat = coord.latitude
+        pegg.lng = coord.longitude
     }
+    
     func imagePickerControllerDidCancel(picker: UIImagePickerController) {
         dismissViewControllerAnimated(true, completion: nil)
     }
@@ -61,8 +93,10 @@ class PeggViewController: UIViewController, UIImagePickerControllerDelegate,UINa
     @IBAction func sendPegg(sender: UIButton) {
         
         pegg.description = "things"
-        pegg.lat = 1.3
-        pegg.lng = 1.3
+        if (pegg.lat == nil || pegg.lng == nil) {
+            pegg.lat = -1
+            pegg.lng = -1
+        }
         pegg.receivers = "test"
         pegg.community = "true"
         
@@ -77,5 +111,5 @@ class PeggViewController: UIViewController, UIImagePickerControllerDelegate,UINa
             takeAPegg()
         }
     }
-
+    
 }

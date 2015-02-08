@@ -23,6 +23,7 @@
 		17F968F21A85D8DD003637B7 /* PeggAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17F968F11A85D8DD003637B7 /* PeggAPI.swift */; };
 		346F5B1837C8D21822BBFEDA /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6617710EAD000F0246D4CAFE /* Pods.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		540CA4DF1A831F5600A384C1 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 540CA4DE1A831F5600A384C1 /* ProfileViewController.swift */; };
+		5439608D1A880BA300021855 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5439608C1A880BA300021855 /* CoreLocation.framework */; };
 		544E41CB1A83543F0052C50D /* pegg_icon_full copy_small.png in Resources */ = {isa = PBXBuildFile; fileRef = 544E41CA1A83543F0052C50D /* pegg_icon_full copy_small.png */; };
 		544E41D31A8369EF0052C50D /* bell_small.png in Resources */ = {isa = PBXBuildFile; fileRef = 544E41D21A8369EF0052C50D /* bell_small.png */; };
 		544E41D51A8375A40052C50D /* pegg_icon_full.png in Resources */ = {isa = PBXBuildFile; fileRef = 544E41D41A8375A40052C50D /* pegg_icon_full.png */; };
@@ -62,6 +63,7 @@
 		17F968F11A85D8DD003637B7 /* PeggAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PeggAPI.swift; sourceTree = "<group>"; };
 		540CA4DE1A831F5600A384C1 /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		540CA4FF1A83277F00A384C1 /* Pegg-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Pegg-Bridging-Header.h"; sourceTree = "<group>"; };
+		5439608C1A880BA300021855 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		544E41CA1A83543F0052C50D /* pegg_icon_full copy_small.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "pegg_icon_full copy_small.png"; path = "../pegg_icon_full copy_small.png"; sourceTree = "<group>"; };
 		544E41D21A8369EF0052C50D /* bell_small.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bell_small.png; sourceTree = "<group>"; };
 		544E41D41A8375A40052C50D /* pegg_icon_full.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pegg_icon_full.png; sourceTree = "<group>"; };
@@ -78,6 +80,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5439608D1A880BA300021855 /* CoreLocation.framework in Frameworks */,
 				346F5B1837C8D21822BBFEDA /* Pods.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -194,6 +197,7 @@
 		F30B160DEC69CD34D4618F59 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				5439608C1A880BA300021855 /* CoreLocation.framework */,
 				6617710EAD000F0246D4CAFE /* Pods.framework */,
 			);
 			name = Frameworks;
@@ -446,7 +450,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -483,7 +487,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
