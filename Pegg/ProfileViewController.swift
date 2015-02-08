@@ -34,7 +34,6 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
         default:
             break
         }
-        println(badges)
         tableView.reloadData()
     }
     
