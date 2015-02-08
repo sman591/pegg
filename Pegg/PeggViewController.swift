@@ -53,6 +53,11 @@ class PeggViewController: UIViewController, UIImagePickerControllerDelegate,UINa
         dismissViewControllerAnimated(true, completion: nil)
     }
     
+    @IBAction func cancel(sender: UIButton) {
+        pegg = Pegg(image: nil, description: nil, lat: nil, lng: nil, receivers: nil, community: nil)
+        imageView.image = nil
+    }
+    
     @IBAction func sendPegg(sender: UIButton) {
         
         pegg.description = "things"
