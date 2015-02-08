@@ -14,6 +14,7 @@ class AddFriendViewController: UIViewController, UISearchBarDelegate, UITableVie
     @IBOutlet weak var tableView: UITableView!
     
     var friends = [Friend]()
+    var searchCount = 0
     
     @IBAction func cancelButton(sender: AnyObject) {
         self.dismissViewControllerAnimated(true, completion: nil)
@@ -35,9 +36,14 @@ class AddFriendViewController: UIViewController, UISearchBarDelegate, UITableVie
         if searchText.utf16Count == 0 {
             return
         }
+        searchCount++
+        let currentSearch = searchCount
         PeggAPI.search(searchText,
             completion: { json in
-                println(json)
+                if (currentSearch != self.searchCount) {
+                    // prevents late return API calls from overriding a newer table
+                    return;
+                }
                 self.friends = []
                 for (friendIndex: String, friend: JSON) in json {
                     self.friends.append(Friend(
