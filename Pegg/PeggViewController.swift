@@ -47,7 +47,8 @@ class PeggViewController: UIViewController, UIImagePickerControllerDelegate,UINa
     func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [NSObject : AnyObject]) {
         dismissViewControllerAnimated(true, completion: nil)
         let img = info[UIImagePickerControllerOriginalImage] as? UIImage
-        imageView.image = img
+        pegg.image = img
+        imageView.image = pegg.image
     }
     func imagePickerControllerDidCancel(picker: UIImagePickerController) {
         dismissViewControllerAnimated(true, completion: nil)
