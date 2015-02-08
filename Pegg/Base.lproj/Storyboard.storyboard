@@ -252,7 +252,7 @@
                                 <rect key="frame" x="-1" y="269" width="602" height="282"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell" rowHeight="57" id="Eyc-4m-wtW" customClass="ProfileTableViewCell" customModule="Pegg" customModuleProvider="target">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell" rowHeight="57" id="Eyc-4m-wtW" customClass="UserTableViewCell" customModule="Pegg" customModuleProvider="target">
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Eyc-4m-wtW" id="0hR-hM-nzJ">
                                             <autoresizingMask key="autoresizingMask"/>
@@ -492,9 +492,50 @@
                                     <outlet property="delegate" destination="ZfU-IU-b5j" id="t14-b4-NT5"/>
                                 </connections>
                             </searchBar>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="TDp-YT-Wxm">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="58" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="TDp-YT-Wxm">
                                 <rect key="frame" x="0.0" y="108" width="600" height="492"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" rowHeight="57" id="ZS9-QC-pK6" customClass="UserTableViewCell" customModule="Pegg" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ZS9-QC-pK6" id="k1q-6e-ZTj">
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Username" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IZX-5S-xA9">
+                                                    <rect key="frame" x="74" y="31" width="62" height="16"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Khv-2M-8aY">
+                                                    <rect key="frame" x="74" y="9" width="53" height="24"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="IZX-5S-xA9" firstAttribute="leading" secondItem="k1q-6e-ZTj" secondAttribute="leadingMargin" constant="66" id="9SK-Xz-vBJ"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="IZX-5S-xA9" secondAttribute="bottom" constant="1" id="D9t-md-hDJ"/>
+                                                <constraint firstItem="IZX-5S-xA9" firstAttribute="top" secondItem="Khv-2M-8aY" secondAttribute="bottom" constant="-2" id="G3Y-Zh-KHw"/>
+                                                <constraint firstItem="Khv-2M-8aY" firstAttribute="leading" secondItem="k1q-6e-ZTj" secondAttribute="leadingMargin" constant="66" id="U4y-5h-pfm"/>
+                                                <constraint firstItem="Khv-2M-8aY" firstAttribute="top" secondItem="k1q-6e-ZTj" secondAttribute="topMargin" constant="1" id="XLF-yO-qz0"/>
+                                                <constraint firstItem="IZX-5S-xA9" firstAttribute="top" secondItem="k1q-6e-ZTj" secondAttribute="topMargin" constant="-2" id="alN-jp-4HF"/>
+                                            </constraints>
+                                            <variation key="default">
+                                                <mask key="constraints">
+                                                    <exclude reference="D9t-md-hDJ"/>
+                                                    <exclude reference="alN-jp-4HF"/>
+                                                </mask>
+                                            </variation>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="descriptionLabel" destination="IZX-5S-xA9" id="ggY-yt-jdV"/>
+                                            <outlet property="nameLabel" destination="Khv-2M-8aY" id="Oif-ji-yDY"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -531,6 +572,8 @@
                     </navigationItem>
                     <connections>
                         <outlet property="searchDisplayController" destination="Z68-Vo-cKZ" id="QJ2-SE-8lS"/>
+                        <outlet property="searchInput" destination="wvf-0F-AfL" id="qFT-Uc-TCR"/>
+                        <outlet property="tableView" destination="TDp-YT-Wxm" id="eb4-Fo-vSi"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nzh-YG-9Sc" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -875,7 +918,7 @@
         <image name="settings" width="42" height="42"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="toh-Ip-N6b"/>
+        <segue reference="FBA-gz-dAf"/>
         <segue reference="PlQ-ku-r4R"/>
         <segue reference="MfL-AJ-kp5"/>
     </inferredMetricsTieBreakers>

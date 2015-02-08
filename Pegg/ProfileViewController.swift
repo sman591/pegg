@@ -109,7 +109,7 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        var cell:ProfileTableViewCell = self.tableView.dequeueReusableCellWithIdentifier("cell") as ProfileTableViewCell
+        var cell = self.tableView.dequeueReusableCellWithIdentifier("cell") as UserTableViewCell
         
         cell.nameLabel?.text = self.items[indexPath.row]
         cell.descriptionLabel?.text = self.details[indexPath.row]

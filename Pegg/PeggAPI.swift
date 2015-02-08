@@ -50,6 +50,10 @@ class PeggAPI {
         self.makeRequest(.POST, route: "search.php", parameters: ["query": query], completion: completion, failure: failure)
     }
     
+    class func addFriend(username: String, completion: PeggAPISuccess, failure: PeggAPIFailure? = nil) {
+        self.makeRequest(.POST, route: "addFriend.php", parameters: ["username": username], completion: completion, failure: failure)
+    }
+    
     class func loadProfile(completion: PeggAPISuccess) {
         self.makeRequest(.POST, route: "me.php", completion: completion)
     }

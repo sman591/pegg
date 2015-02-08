@@ -1,5 +1,5 @@
 //
-//  ProfileTableViewCell.swift
+//  UserTableViewCell.swift
 //  Pegg
 //
 //  Created by Henry Saniuk on 2/6/15.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ProfileTableViewCell: UITableViewCell {
+class UserTableViewCell: UITableViewCell {
     
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var descriptionLabel: UILabel!
