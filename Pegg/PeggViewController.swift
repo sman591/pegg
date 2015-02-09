@@ -40,8 +40,9 @@ class PeggViewController: UIViewController, UIImagePickerControllerDelegate, UIN
         var tapGesture = UITapGestureRecognizer(target: self, action: Selector("takeAPegg"))
         imageView.addGestureRecognizer(tapGesture)
         
-        // Source: http://stackoverflow.com/questions/27652227/text-view-placeholder-swift
         textView.delegate = self
+        
+        // Source: http://stackoverflow.com/questions/27652227/text-view-placeholder-swift
         placeholderLabel = UILabel()
         placeholderLabel.text = "Enter description..."
         placeholderLabel.font = UIFont.italicSystemFontOfSize(textView.font.pointSize)
@@ -107,7 +108,7 @@ class PeggViewController: UIViewController, UIImagePickerControllerDelegate, UIN
     
     @IBAction func sendPegg(sender: UIButton) {
         
-        pegg.description = "things"
+        pegg.description = textView.text ?? ""
         if (pegg.lat == nil || pegg.lng == nil) {
             pegg.lat = -1
             pegg.lng = -1
@@ -116,7 +117,6 @@ class PeggViewController: UIViewController, UIImagePickerControllerDelegate, UIN
         pegg.community = "true"
         
         PeggAPI.createPegg(pegg.image!, description: pegg.description!, lat: pegg.lat!, lng: pegg.lng!, community: pegg.community!, receivers: pegg.receivers!, { json in
-            println("Uploaded!!")
         })
     }
     
@@ -129,6 +129,12 @@ class PeggViewController: UIViewController, UIImagePickerControllerDelegate, UIN
     
     func textViewDidChange(textView: UITextView) {
         placeholderLabel.hidden = countElements(textView.text) != 0
+    }
+    
+    func textView(textView: UITextView!, shouldChangeTextInRange: NSRange, replacementText: NSString!) {
+        if(replacementText == "\n") {
+            textView.resignFirstResponder()
+        }
     }
     
 }

@@ -107,9 +107,8 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="150" id="7pm-f9-Ucv"/>
                                 </constraints>
-                                <string key="text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Experiamur igitur, inquit, etsi habet haec Stoicorum ratio difficilius quiddam et obscurius.</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences" spellCheckingType="yes" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
                                 <variation key="default">
                                     <mask key="constraints">
                                         <exclude reference="7pm-f9-Ucv"/>
