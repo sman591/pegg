@@ -18,6 +18,7 @@
 		175BAE6D1A8812FF00892BE8 /* Badge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 175BAE6C1A8812FF00892BE8 /* Badge.swift */; };
 		175BAE721A885D9700892BE8 /* ChallengeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 175BAE711A885D9700892BE8 /* ChallengeTableViewCell.swift */; };
 		175BAE741A885EFA00892BE8 /* Challenge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 175BAE731A885EFA00892BE8 /* Challenge.swift */; };
+		175BAE761A88701100892BE8 /* ChallengeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 175BAE751A88701100892BE8 /* ChallengeViewController.swift */; };
 		178CC0661A88091A00271E39 /* Friend.swift in Sources */ = {isa = PBXBuildFile; fileRef = 178CC0651A88091A00271E39 /* Friend.swift */; };
 		17CA66B71A87058800FA5591 /* AddFriendViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17CA66B61A87058800FA5591 /* AddFriendViewController.swift */; };
 		17F75EAA1A86E4D30045B4F8 /* Pegg.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17F75EA91A86E4D30045B4F8 /* Pegg.swift */; };
@@ -60,6 +61,7 @@
 		175BAE6C1A8812FF00892BE8 /* Badge.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Badge.swift; sourceTree = "<group>"; };
 		175BAE711A885D9700892BE8 /* ChallengeTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChallengeTableViewCell.swift; sourceTree = "<group>"; };
 		175BAE731A885EFA00892BE8 /* Challenge.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Challenge.swift; sourceTree = "<group>"; };
+		175BAE751A88701100892BE8 /* ChallengeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChallengeViewController.swift; sourceTree = "<group>"; };
 		178CC0651A88091A00271E39 /* Friend.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Friend.swift; sourceTree = "<group>"; };
 		17CA66B61A87058800FA5591 /* AddFriendViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddFriendViewController.swift; sourceTree = "<group>"; };
 		17F75EA91A86E4D30045B4F8 /* Pegg.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Pegg.swift; sourceTree = "<group>"; };
@@ -124,6 +126,7 @@
 		1733FA8D1A830CC0003C7773 /* Pegg */ = {
 			isa = PBXGroup;
 			children = (
+				175BAE751A88701100892BE8 /* ChallengeViewController.swift */,
 				175BAE711A885D9700892BE8 /* ChallengeTableViewCell.swift */,
 				17E45C661A83590E00642FC4 /* Assets */,
 				175BAE6E1A8815F500892BE8 /* Models */,
@@ -369,6 +372,7 @@
 				17F75EAA1A86E4D30045B4F8 /* Pegg.swift in Sources */,
 				544E41D71A8377B50052C50D /* SignupViewController.swift in Sources */,
 				17F968F21A85D8DD003637B7 /* PeggAPI.swift in Sources */,
+				175BAE761A88701100892BE8 /* ChallengeViewController.swift in Sources */,
 				549416C21A85A93700C28868 /* UserTableViewCell.swift in Sources */,
 				1733FA951A830CC0003C7773 /* PeggViewController.swift in Sources */,
 				17F968EE1A85CD87003637B7 /* AuthenticationManager.swift in Sources */,

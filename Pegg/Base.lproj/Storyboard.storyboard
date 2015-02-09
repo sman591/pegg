@@ -89,6 +89,7 @@
                                             <outlet property="distanceLabel" destination="IE9-Ul-B9R" id="dRo-MZ-2Gs"/>
                                             <outlet property="imagePreview" destination="bpw-Zz-0UP" id="tU8-jA-rzM"/>
                                             <outlet property="nameLabel" destination="W0F-PS-Xpf" id="0uz-dv-lay"/>
+                                            <segue destination="TZj-SS-qOs" kind="show" identifier="showChallenge" id="Egt-vr-whG"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -133,6 +134,91 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W5J-7L-Pyd" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1415" y="-334"/>
+        </scene>
+        <!--Challenge View-->
+        <scene sceneID="yXb-Jh-Fdy">
+            <objects>
+                <viewController title="Challenge View" id="TZj-SS-qOs" customClass="ChallengeViewController" customModule="Pegg" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="oZb-Gv-asS"/>
+                        <viewControllerLayoutGuide type="bottom" id="i59-Kh-pw8"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="SBC-X6-b9H">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="BOl-z2-4u2">
+                                <rect key="frame" x="16" y="82" width="150" height="200"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="BOl-z2-4u2" secondAttribute="height" multiplier="3:4" id="fbi-SJ-ARP"/>
+                                    <constraint firstAttribute="width" constant="150" id="ldc-aF-jR8"/>
+                                </constraints>
+                            </imageView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uaS-NM-R63">
+                                <rect key="frame" x="180" y="127" width="404" height="155"/>
+                                <color key="backgroundColor" red="0.92392113099999995" green="0.92392113099999995" blue="0.92392113099999995" alpha="1" colorSpace="calibratedRGB"/>
+                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="gld-9t-qoK">
+                                <rect key="frame" x="0.0" y="295" width="600" height="256"/>
+                            </mapView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Username" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HrE-hd-Vzz">
+                                <rect key="frame" x="180" y="82" width="79" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YTs-Tu-E4t">
+                                <rect key="frame" x="180" y="102" width="31" height="17"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="YTs-Tu-E4t" firstAttribute="baseline" secondItem="HrE-hd-Vzz" secondAttribute="baseline" constant="1" id="27E-7U-vXF"/>
+                            <constraint firstItem="BOl-z2-4u2" firstAttribute="bottom" secondItem="uaS-NM-R63" secondAttribute="bottom" id="2Jb-F4-Dtr"/>
+                            <constraint firstItem="uaS-NM-R63" firstAttribute="leading" secondItem="BOl-z2-4u2" secondAttribute="trailing" constant="14" id="2vF-HI-HUI"/>
+                            <constraint firstItem="BOl-z2-4u2" firstAttribute="height" secondItem="uaS-NM-R63" secondAttribute="height" id="CME-gb-h8V"/>
+                            <constraint firstItem="gld-9t-qoK" firstAttribute="top" secondItem="uaS-NM-R63" secondAttribute="bottom" constant="13" id="FlR-NM-fOw"/>
+                            <constraint firstItem="YTs-Tu-E4t" firstAttribute="centerY" secondItem="HrE-hd-Vzz" secondAttribute="centerY" constant="2" id="GWm-OP-zAw"/>
+                            <constraint firstItem="YTs-Tu-E4t" firstAttribute="leading" secondItem="BOl-z2-4u2" secondAttribute="trailing" constant="14" id="JJB-H5-WsB"/>
+                            <constraint firstItem="uaS-NM-R63" firstAttribute="top" secondItem="YTs-Tu-E4t" secondAttribute="bottom" constant="8" id="LUc-hz-C7O"/>
+                            <constraint firstItem="i59-Kh-pw8" firstAttribute="top" secondItem="gld-9t-qoK" secondAttribute="bottom" id="MBZ-e9-1QM"/>
+                            <constraint firstItem="uaS-NM-R63" firstAttribute="trailing" secondItem="SBC-X6-b9H" secondAttribute="trailingMargin" id="XjK-cz-H92"/>
+                            <constraint firstAttribute="centerX" secondItem="gld-9t-qoK" secondAttribute="centerX" id="XsR-7m-SKw"/>
+                            <constraint firstItem="gld-9t-qoK" firstAttribute="top" secondItem="BOl-z2-4u2" secondAttribute="bottom" constant="13" id="dIC-YO-aa1"/>
+                            <constraint firstItem="BOl-z2-4u2" firstAttribute="top" secondItem="oZb-Gv-asS" secondAttribute="bottom" constant="18" id="fId-0s-1hO"/>
+                            <constraint firstItem="HrE-hd-Vzz" firstAttribute="leading" secondItem="BOl-z2-4u2" secondAttribute="trailing" constant="14" id="hIU-Zq-HhH"/>
+                            <constraint firstItem="YTs-Tu-E4t" firstAttribute="top" secondItem="HrE-hd-Vzz" secondAttribute="bottom" constant="-1" id="hM2-BX-XGw"/>
+                            <constraint firstItem="HrE-hd-Vzz" firstAttribute="top" secondItem="oZb-Gv-asS" secondAttribute="bottom" constant="18" id="hij-I0-Ayc"/>
+                            <constraint firstItem="gld-9t-qoK" firstAttribute="width" secondItem="SBC-X6-b9H" secondAttribute="width" id="jeE-iw-pdf"/>
+                            <constraint firstItem="BOl-z2-4u2" firstAttribute="leading" secondItem="SBC-X6-b9H" secondAttribute="leadingMargin" id="kF1-eT-mny"/>
+                            <constraint firstItem="YTs-Tu-E4t" firstAttribute="leading" secondItem="HrE-hd-Vzz" secondAttribute="trailing" constant="8" id="z0A-d7-k3A"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="CME-gb-h8V"/>
+                                <exclude reference="27E-7U-vXF"/>
+                                <exclude reference="GWm-OP-zAw"/>
+                                <exclude reference="z0A-d7-k3A"/>
+                            </mask>
+                        </variation>
+                    </view>
+                    <connections>
+                        <outlet property="dateLabel" destination="YTs-Tu-E4t" id="ryh-5f-LdC"/>
+                        <outlet property="descriptionLabel" destination="uaS-NM-R63" id="CDu-dP-Klv"/>
+                        <outlet property="imageView" destination="BOl-z2-4u2" id="kax-fu-Hsh"/>
+                        <outlet property="mapView" destination="gld-9t-qoK" id="fzR-DJ-KOq"/>
+                        <outlet property="usernameLabel" destination="HrE-hd-Vzz" id="oLE-KF-KvZ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="lqE-c7-Dpm" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2082" y="-334"/>
         </scene>
         <!--Find-->
         <scene sceneID="I9f-0n-BbQ">
@@ -1149,8 +1235,8 @@ Pegg – Engage your Environment</string>
         <image name="settings" width="42" height="42"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="hve-bf-4Xx"/>
-        <segue reference="gko-F1-TsN"/>
+        <segue reference="KWz-5v-qa5"/>
         <segue reference="MfL-AJ-kp5"/>
+        <segue reference="gko-F1-TsN"/>
     </inferredMetricsTieBreakers>
 </document>

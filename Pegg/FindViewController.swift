@@ -47,7 +47,7 @@ class FindViewController: UIViewController, CLLocationManagerDelegate, UITableVi
     override func viewDidAppear(animated: Bool) {
         hasAppearedWithChallenges = false
         if self.challenges.count == 0 {
-            self.challenges = [Challenge(name: "Loading...", distance: "", id: "", timestamp: "")]
+            self.challenges = [Challenge(name: "Loading...", distance: "", id: "", timestamp: "", details: "", lat: 0, lng: 0)]
         }
     }
     
@@ -104,6 +104,14 @@ class FindViewController: UIViewController, CLLocationManagerDelegate, UITableVi
         return cell
     }
     
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "showChallenge" {
+            let challengeDetailViewController = segue.destinationViewController as ChallengeViewController
+            let indexPath = self.tableView.indexPathForSelectedRow()!
+            challengeDetailViewController.challenge = self.challenges[indexPath.row]
+        }
+    }
+    
     func locationManager(manager: CLLocationManager!, didFailWithError error: NSError!) {
         locationManager.stopUpdatingLocation()
         if ((error) != nil) {
@@ -127,7 +135,11 @@ class FindViewController: UIViewController, CLLocationManagerDelegate, UITableVi
                             name: pegg["name"].stringValue,
                             distance: pegg["distance"].stringValue,
                             id: pegg["id"].stringValue,
-                            timestamp: pegg["timestamp"].stringValue))
+                            timestamp: pegg["timestamp"].stringValue,
+                            details: pegg["details"].stringValue,
+                            lat: pegg["lat"].doubleValue,
+                            lng: pegg["lng"].doubleValue
+                            ))
                             Alamofire.request(.GET, pegg["url"].stringValue)
                                 .response {(request, response, imageData, error) in
                                     if (error != nil) {
@@ -141,7 +153,7 @@ class FindViewController: UIViewController, CLLocationManagerDelegate, UITableVi
                     }
                 
                     if self.challenges.count == 0 {
-                        self.challenges = [Challenge(name: "No challenges", distance: "", id: "", timestamp: "")]
+                        self.challenges = [Challenge(name: "No challenges", distance: "", id: "", timestamp: "", details: "", lat: 0.0, lng: 0.0)]
                     }
                 
                     self.tableView.reloadData()
