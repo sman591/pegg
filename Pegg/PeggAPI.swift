@@ -54,6 +54,10 @@ class PeggAPI {
         self.makeRequest(.POST, route: "addFriend.php", parameters: ["recipient": recipient], completion: completion, failure: failure)
     }
     
+    class func getChallenges(lat: String, lng: String, completion: PeggAPISuccess, failure: PeggAPIFailure? = nil) {
+        self.makeRequest(.POST, route: "challenges.php", parameters: ["lat": lat, "lng": lng], completion: completion, failure: failure)
+    }
+    
     class func loadProfile(completion: PeggAPISuccess) {
         self.makeRequest(.POST, route: "me.php", completion: completion)
     }
