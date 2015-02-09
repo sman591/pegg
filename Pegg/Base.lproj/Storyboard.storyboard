@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14C109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="49e-Tb-3d3">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="49e-Tb-3d3">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
@@ -89,12 +89,17 @@
                                 </constraints>
                             </imageView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="3b0-u7-6d2">
-                                <rect key="frame" x="0.0" y="260" width="600" height="241"/>
+                                <rect key="frame" x="0.0" y="260" width="600" height="222"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </tableView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AtF-2u-FuK">
-                                <rect key="frame" x="262" y="511" width="76" height="30"/>
+                                <rect key="frame" x="16" y="490" width="568" height="51"/>
+                                <color key="backgroundColor" red="0.53725490200000003" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="51" id="1jQ-cO-IfL"/>
+                                </constraints>
                                 <state key="normal" title="Send Pegg">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
@@ -115,28 +120,42 @@
                                     </mask>
                                 </variation>
                             </textView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3zx-o5-ixJ">
+                                <rect key="frame" x="-1" y="255" width="602" height="4"/>
+                                <color key="backgroundColor" white="0.84560032890000003" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="4" id="x6t-aw-HV2"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="3b0-u7-6d2" firstAttribute="top" secondItem="3zx-o5-ixJ" secondAttribute="bottom" constant="1" id="0hX-ne-rhv"/>
                             <constraint firstAttribute="trailingMargin" secondItem="rz2-aH-DeS" secondAttribute="trailing" id="39U-gI-pmh"/>
                             <constraint firstItem="hEL-dy-9XW" firstAttribute="top" secondItem="L7p-HK-0SC" secondAttribute="bottom" constant="15" id="4BJ-MX-rLN"/>
                             <constraint firstItem="Djb-ko-YwX" firstAttribute="top" secondItem="AtF-2u-FuK" secondAttribute="bottom" constant="10" id="ECm-kO-VeF"/>
                             <constraint firstItem="3b0-u7-6d2" firstAttribute="leading" secondItem="QS5-Rx-YEW" secondAttribute="leadingMargin" constant="-16" id="G6Y-xv-pfT"/>
                             <constraint firstItem="hEL-dy-9XW" firstAttribute="height" secondItem="rz2-aH-DeS" secondAttribute="height" id="U1j-TY-yb1"/>
                             <constraint firstItem="Djb-ko-YwX" firstAttribute="top" secondItem="3b0-u7-6d2" secondAttribute="bottom" constant="50" id="UnC-wu-J8e"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="3zx-o5-ixJ" secondAttribute="trailing" constant="-17" id="XnB-5Y-8aA"/>
+                            <constraint firstItem="AtF-2u-FuK" firstAttribute="top" secondItem="3b0-u7-6d2" secondAttribute="bottom" constant="8" id="Y2H-FA-81Q"/>
                             <constraint firstItem="3b0-u7-6d2" firstAttribute="top" secondItem="hEL-dy-9XW" secondAttribute="bottom" constant="15" id="ZIo-nQ-VUR"/>
+                            <constraint firstItem="AtF-2u-FuK" firstAttribute="leading" secondItem="QS5-Rx-YEW" secondAttribute="leadingMargin" id="Zfc-Gc-P8J"/>
                             <constraint firstAttribute="width" secondItem="3b0-u7-6d2" secondAttribute="width" id="d55-Nv-SKq"/>
                             <constraint firstItem="rz2-aH-DeS" firstAttribute="trailing" secondItem="QS5-Rx-YEW" secondAttribute="trailingMargin" constant="16" id="d8w-c7-1Jv"/>
                             <constraint firstAttribute="centerX" secondItem="AtF-2u-FuK" secondAttribute="centerX" id="eeK-Cb-cRw"/>
                             <constraint firstItem="hEL-dy-9XW" firstAttribute="leading" secondItem="QS5-Rx-YEW" secondAttribute="leadingMargin" id="fZG-Jf-L9I"/>
                             <constraint firstItem="3b0-u7-6d2" firstAttribute="top" secondItem="rz2-aH-DeS" secondAttribute="bottom" constant="15" id="jWX-vU-Raa"/>
                             <constraint firstItem="rz2-aH-DeS" firstAttribute="leading" secondItem="hEL-dy-9XW" secondAttribute="trailing" constant="15" id="s6u-iW-rnm"/>
+                            <constraint firstItem="AtF-2u-FuK" firstAttribute="trailing" secondItem="QS5-Rx-YEW" secondAttribute="trailingMargin" id="utZ-Gf-rte"/>
+                            <constraint firstItem="3zx-o5-ixJ" firstAttribute="leading" secondItem="QS5-Rx-YEW" secondAttribute="leadingMargin" constant="-17" id="x8O-K4-JRg"/>
                             <constraint firstItem="rz2-aH-DeS" firstAttribute="top" secondItem="L7p-HK-0SC" secondAttribute="bottom" constant="15" id="yJv-qU-vcn"/>
                         </constraints>
                         <variation key="default">
                             <mask key="constraints">
                                 <exclude reference="d8w-c7-1Jv"/>
                                 <exclude reference="ZIo-nQ-VUR"/>
+                                <exclude reference="UnC-wu-J8e"/>
                             </mask>
                         </variation>
                     </view>
@@ -150,6 +169,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="imageView" destination="hEL-dy-9XW" id="x05-an-H9O"/>
+                        <outlet property="sendPeggButton" destination="AtF-2u-FuK" id="L4q-Xh-6Qf"/>
                         <outlet property="textView" destination="rz2-aH-DeS" id="1Md-JT-g5S"/>
                         <segue destination="3sZ-39-uph" kind="presentation" identifier="logout" id="toh-Ip-N6b"/>
                     </connections>
@@ -600,7 +620,34 @@
                     <view key="view" contentMode="scaleToFill" id="3v9-M3-5Me">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SDA-zb-dW4">
+                                <rect key="frame" x="28" y="147" width="544" height="305"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="327" id="WxI-Y6-t0A"/>
+                                    <constraint firstAttribute="width" constant="544" id="ixM-2K-Ncq"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="327" id="oUu-uX-xeS"/>
+                                </constraints>
+                                <string key="text">Pegg © Copyright 2015. All Rights Reserved.Version 1.0Designed and Developed by: Henry Saniuk, Stuart Olivera, and Brandon HudsonOpen-Source ProjectsSwiftlyJSON https://github.com/SwiftyJSON/SwiftyJSONSwiftKeychainWrapper https://github.com/deniskr/KeychainSwiftAPIAlamoFire https://github.com/Alamofire/AlamofireAFNetworking - https://github.com/AFNetworking/AFNetworking</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="WxI-Y6-t0A"/>
+                                        <exclude reference="ixM-2K-Ncq"/>
+                                        <exclude reference="oUu-uX-xeS"/>
+                                    </mask>
+                                </variation>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="centerX" secondItem="SDA-zb-dW4" secondAttribute="centerX" id="BsM-Tx-weJ"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="SDA-zb-dW4" secondAttribute="trailing" constant="12" id="HE6-O6-2MV"/>
+                            <constraint firstAttribute="centerY" secondItem="SDA-zb-dW4" secondAttribute="centerY" id="iJL-sa-5eQ"/>
+                            <constraint firstItem="SDA-zb-dW4" firstAttribute="leading" secondItem="3v9-M3-5Me" secondAttribute="leadingMargin" constant="12" id="tFo-Yf-CKI"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Credits" id="s7p-CW-tfu"/>
                 </viewController>
@@ -900,7 +947,42 @@
                     <view key="view" contentMode="scaleToFill" id="bJB-eB-V5P">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IJK-2m-j32">
+                                <rect key="frame" x="0.0" y="64" width="600" height="536"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EoN-LJ-dZw">
+                                        <rect key="frame" x="12" y="0.0" width="600" height="609"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="544" id="Mqj-eR-Gmr"/>
+                                        </constraints>
+                                        <mutableString key="text">OverviewPegg is a social, photo scavenger hunt app where individuals are challenged to see life through their friend’s eyes. To use Pegg, simply take a photo and attach a caption and send – it’s that easy! When you send a photo, you may choose to send it directly to your friends, or challenge the community around you. Pegging with FriendsPeggs are simple to respond to – Once you receive a Pegg, you may accept or reject the challenge. If you choose to accept, you must get within 100 feet of the location where the original photo was taken (don’t worry, we’ll guide you in the right direction). Once there, just take the same photo and submit. We will verify your response with the your friend’s initial Pegg if they are close enough, you will be awarded the points for your challenge.Pegging with the CommunityPart of what makes Pegg special is the ability to share your experiences with the world around you. Despite the fact that we are in close proximity to one another in a community, we never get to see life through each other’s eyes. With Pegg, all of this changes! Simply publish your Peggs so that anyone in the community can see them. Once published, any individual in the community can see your challenge and directly respond to it!  Pegg brings the best of gaming and personal experiences together to create a simple, but addictively fun game for all ages. So what are you waiting for?! Pegg – Engage your Environment</mutableString>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                        <variation key="default">
+                                            <mask key="constraints">
+                                                <exclude reference="Mqj-eR-Gmr"/>
+                                            </mask>
+                                        </variation>
+                                    </label>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="EoN-LJ-dZw" secondAttribute="bottom" id="Dva-P1-NgF"/>
+                                    <constraint firstItem="EoN-LJ-dZw" firstAttribute="leading" secondItem="IJK-2m-j32" secondAttribute="leading" constant="12" id="ER9-7f-Iq6"/>
+                                    <constraint firstAttribute="width" secondItem="EoN-LJ-dZw" secondAttribute="width" id="bIg-23-vC0"/>
+                                    <constraint firstAttribute="trailing" secondItem="EoN-LJ-dZw" secondAttribute="trailing" constant="12" id="evo-Qs-i9m"/>
+                                    <constraint firstItem="EoN-LJ-dZw" firstAttribute="top" secondItem="IJK-2m-j32" secondAttribute="top" id="prp-OX-pEe"/>
+                                </constraints>
+                            </scrollView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="BiK-wd-f3m" firstAttribute="top" secondItem="IJK-2m-j32" secondAttribute="bottom" id="AOI-Kj-Ddy"/>
+                            <constraint firstItem="IJK-2m-j32" firstAttribute="leading" secondItem="bJB-eB-V5P" secondAttribute="leadingMargin" constant="-16" id="CP5-HE-MZc"/>
+                            <constraint firstItem="IJK-2m-j32" firstAttribute="top" secondItem="DDc-MD-tla" secondAttribute="bottom" id="k5w-e7-uFz"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="IJK-2m-j32" secondAttribute="trailing" constant="-16" id="yVo-P5-0nJ"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="About" id="Iim-A4-IhE"/>
                 </viewController>
@@ -918,8 +1000,8 @@
         <image name="settings" width="42" height="42"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="PlQ-ku-r4R"/>
         <segue reference="toh-Ip-N6b"/>
+        <segue reference="gko-F1-TsN"/>
         <segue reference="MfL-AJ-kp5"/>
     </inferredMetricsTieBreakers>
 </document>

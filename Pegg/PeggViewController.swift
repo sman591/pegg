@@ -14,6 +14,7 @@ class PeggViewController: UIViewController, UIImagePickerControllerDelegate, UIN
     
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var textView: UITextView!
+    @IBOutlet weak var sendPeggButton: UIButton!
     
     let picker = UIImagePickerController()
     let locationManager = CLLocationManager()
@@ -23,6 +24,8 @@ class PeggViewController: UIViewController, UIImagePickerControllerDelegate, UIN
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        sendPeggButton.layer.cornerRadius = 5
         
         if (CLLocationManager.locationServicesEnabled()) {
             locationManager.delegate = self
