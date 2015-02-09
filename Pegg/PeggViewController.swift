@@ -21,6 +21,7 @@ class PeggViewController: UIViewController, UIImagePickerControllerDelegate, UIN
     let locationManager = CLLocationManager()
     var placeholderLabel : UILabel!
     var friends = [Friend]()
+    var selectedFriendsUsernames = [String]()
     
     var pegg = Pegg(image: nil, description: nil, lat: nil, lng: nil, receivers: nil, community: nil)
     
@@ -174,7 +175,23 @@ class PeggViewController: UIViewController, UIImagePickerControllerDelegate, UIN
         let friend = self.friends[indexPath.row]
         cell.nameLabel.text = friend.fullName()
         cell.descriptionLabel.text = friend.username
+        if contains(selectedFriendsUsernames, friend.username) {
+            cell.accessoryType = .Checkmark
+        } else {
+            cell.accessoryType = .None
+        }
         return cell
+    }
+    
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        let friend = self.friends[indexPath.row]
+        if contains(selectedFriendsUsernames, friend.username) {
+            let friendIndex = find(selectedFriendsUsernames, friend.username)!
+            selectedFriendsUsernames.removeAtIndex(friendIndex)
+        } else {
+            selectedFriendsUsernames.append(friends[indexPath.row].username)
+        }
+        tableView.reloadRowsAtIndexPaths([indexPath], withRowAnimation: .Automatic)
     }
     
 }
