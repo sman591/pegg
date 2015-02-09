@@ -7,18 +7,20 @@
 //
 
 import UIKit
+import SwiftyJSON
 import CoreLocation
 
-class PeggViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, CLLocationManagerDelegate,
-    UITextViewDelegate {
+class PeggViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, CLLocationManagerDelegate, UITextViewDelegate, UITableViewDelegate, UITableViewDataSource {
     
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var textView: UITextView!
     @IBOutlet weak var sendPeggButton: UIButton!
+    @IBOutlet weak var tableView: UITableView!
     
     let picker = UIImagePickerController()
     let locationManager = CLLocationManager()
     var placeholderLabel : UILabel!
+    var friends = [Friend]()
     
     var pegg = Pegg(image: nil, description: nil, lat: nil, lng: nil, receivers: nil, community: nil)
     
@@ -54,6 +56,27 @@ class PeggViewController: UIViewController, UIImagePickerControllerDelegate, UIN
         placeholderLabel.frame.origin = CGPointMake(5, textView.font.pointSize / 2)
         placeholderLabel.textColor = UIColor(white: 0, alpha: 0.5)
         placeholderLabel.hidden = countElements(textView.text) != 0
+        
+        tableView.delegate = self
+        
+        PeggAPI.loadProfile { data in
+            self.friends = []
+            let fullName = data["first"].stringValue + " " + data["last"].stringValue
+            
+            for (itemIndex: String, item: JSON) in data["friends"] {
+                self.friends.append(Friend(
+                    username: item["username"].stringValue,
+                    first: item["first"].stringValue,
+                    last: item["last"].stringValue
+                ))
+            }
+            
+            if (self.friends.count == 0) {
+                self.friends.append(Friend(username: ":(", first: "You have no friends", last: ""))
+            }
+            println(self.friends)
+            self.tableView.reloadData()
+        }
     }
     
     func locationManager(manager: CLLocationManager!, didFailWithError error: NSError!) {
@@ -140,6 +163,18 @@ class PeggViewController: UIViewController, UIImagePickerControllerDelegate, UIN
             return false
         }
         return true
+    }
+    
+    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return friends.count
+    }
+    
+    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCellWithIdentifier("cell", forIndexPath: indexPath) as UserTableViewCell
+        let friend = self.friends[indexPath.row]
+        cell.nameLabel.text = friend.fullName()
+        cell.descriptionLabel.text = friend.username
+        return cell
     }
     
 }

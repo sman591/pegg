@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="49e-Tb-3d3">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14C109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="49e-Tb-3d3">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
@@ -91,6 +91,44 @@
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="3b0-u7-6d2">
                                 <rect key="frame" x="0.0" y="260" width="600" height="222"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" rowHeight="57" id="ziv-vr-b5y" customClass="UserTableViewCell" customModule="Pegg" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ziv-vr-b5y" id="9zs-cK-pgM">
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Username" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pqe-7K-hdu">
+                                                    <rect key="frame" x="74" y="31" width="62" height="16"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cvK-wA-RP2">
+                                                    <rect key="frame" x="74" y="9" width="53" height="24"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="Pqe-7K-hdu" firstAttribute="top" secondItem="cvK-wA-RP2" secondAttribute="bottom" constant="-2" id="6Cc-4Z-Xfi"/>
+                                                <constraint firstItem="cvK-wA-RP2" firstAttribute="leading" secondItem="9zs-cK-pgM" secondAttribute="leadingMargin" constant="66" id="6TT-wm-kZf"/>
+                                                <constraint firstItem="Pqe-7K-hdu" firstAttribute="top" secondItem="cvK-wA-RP2" secondAttribute="bottom" constant="-2" id="cws-LX-gDO"/>
+                                                <constraint firstItem="cvK-wA-RP2" firstAttribute="top" secondItem="9zs-cK-pgM" secondAttribute="topMargin" constant="1" id="nyf-RP-AIs"/>
+                                                <constraint firstItem="Pqe-7K-hdu" firstAttribute="leading" secondItem="9zs-cK-pgM" secondAttribute="leadingMargin" constant="66" id="wL8-h0-JBn"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="descriptionLabel" destination="Pqe-7K-hdu" id="MKN-cj-OaH"/>
+                                            <outlet property="nameLabel" destination="cvK-wA-RP2" id="aTe-cB-Ns0"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="8rJ-Kc-sve" id="oww-sV-30O"/>
+                                    <outlet property="delegate" destination="8rJ-Kc-sve" id="3J7-fy-zUi"/>
+                                </connections>
                             </tableView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AtF-2u-FuK">
                                 <rect key="frame" x="16" y="490" width="568" height="51"/>
@@ -170,6 +208,7 @@
                     <connections>
                         <outlet property="imageView" destination="hEL-dy-9XW" id="x05-an-H9O"/>
                         <outlet property="sendPeggButton" destination="AtF-2u-FuK" id="L4q-Xh-6Qf"/>
+                        <outlet property="tableView" destination="3b0-u7-6d2" id="qQD-sx-EbQ"/>
                         <outlet property="textView" destination="rz2-aH-DeS" id="1Md-JT-g5S"/>
                         <segue destination="3sZ-39-uph" kind="presentation" identifier="logout" id="toh-Ip-N6b"/>
                     </connections>
@@ -628,7 +667,20 @@
                                     <constraint firstAttribute="width" constant="544" id="ixM-2K-Ncq"/>
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="327" id="oUu-uX-xeS"/>
                                 </constraints>
-                                <string key="text">Pegg © Copyright 2015. All Rights Reserved.Version 1.0Designed and Developed by: Henry Saniuk, Stuart Olivera, and Brandon HudsonOpen-Source ProjectsSwiftlyJSON https://github.com/SwiftyJSON/SwiftyJSONSwiftKeychainWrapper https://github.com/deniskr/KeychainSwiftAPIAlamoFire https://github.com/Alamofire/AlamofireAFNetworking - https://github.com/AFNetworking/AFNetworking</string>
+                                <string key="text">Pegg © Copyright 2015. All Rights Reserved.
+Version 1.0
+Designed and Developed by: Henry Saniuk, Stuart Olivera, and Brandon Hudson
+
+Open-Source Projects
+
+SwiftlyJSON https://github.com/SwiftyJSON/SwiftyJSON
+
+SwiftKeychainWrapper https://github.com/deniskr/KeychainSwiftAPI
+
+AlamoFire https://github.com/Alamofire/Alamofire
+
+AFNetworking - https://github.com/AFNetworking/AFNetworking
+</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
@@ -956,7 +1008,21 @@
                                         <constraints>
                                             <constraint firstAttribute="width" constant="544" id="Mqj-eR-Gmr"/>
                                         </constraints>
-                                        <mutableString key="text">OverviewPegg is a social, photo scavenger hunt app where individuals are challenged to see life through their friend’s eyes. To use Pegg, simply take a photo and attach a caption and send – it’s that easy! When you send a photo, you may choose to send it directly to your friends, or challenge the community around you. Pegging with FriendsPeggs are simple to respond to – Once you receive a Pegg, you may accept or reject the challenge. If you choose to accept, you must get within 100 feet of the location where the original photo was taken (don’t worry, we’ll guide you in the right direction). Once there, just take the same photo and submit. We will verify your response with the your friend’s initial Pegg if they are close enough, you will be awarded the points for your challenge.Pegging with the CommunityPart of what makes Pegg special is the ability to share your experiences with the world around you. Despite the fact that we are in close proximity to one another in a community, we never get to see life through each other’s eyes. With Pegg, all of this changes! Simply publish your Peggs so that anyone in the community can see them. Once published, any individual in the community can see your challenge and directly respond to it!  Pegg brings the best of gaming and personal experiences together to create a simple, but addictively fun game for all ages. So what are you waiting for?! Pegg – Engage your Environment</mutableString>
+                                        <string key="text">Overview
+
+Pegg is a social, photo scavenger hunt app where individuals are challenged to see life through their friend’s eyes. To use Pegg, simply take a photo and attach a caption and send – it’s that easy! When you send a photo, you may choose to send it directly to your friends, or challenge the community around you. 
+
+Pegging with Friends
+
+Peggs are simple to respond to – Once you receive a Pegg, you may accept or reject the challenge. If you choose to accept, you must get within 100 feet of the location where the original photo was taken (don’t worry, we’ll guide you in the right direction). Once there, just take the same photo and submit. We will verify your response with the your friend’s initial Pegg if they are close enough, you will be awarded the points for your challenge.
+
+Pegging with the Community
+
+Part of what makes Pegg special is the ability to share your experiences with the world around you. Despite the fact that we are in close proximity to one another in a community, we never get to see life through each other’s eyes. With Pegg, all of this changes! Simply publish your Peggs so that anyone in the community can see them. Once published, any individual in the community can see your challenge and directly respond to it!  
+
+Pegg brings the best of gaming and personal experiences together to create a simple, but addictively fun game for all ages. So what are you waiting for?! 
+
+Pegg – Engage your Environment</string>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                         <nil key="highlightedColor"/>
