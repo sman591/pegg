@@ -140,7 +140,7 @@ class PeggViewController: UIViewController, UIImagePickerControllerDelegate, UIN
             pegg.lat = -1
             pegg.lng = -1
         }
-        pegg.receivers = "test"
+        pegg.receivers = ",".join(selectedFriendsUsernames)
         pegg.community = "true"
         
         PeggAPI.createPegg(pegg.image!, description: pegg.description!, lat: pegg.lat!, lng: pegg.lng!, community: pegg.community!, receivers: pegg.receivers!, { json in

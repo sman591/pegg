@@ -311,7 +311,7 @@
                                 <rect key="frame" x="-1" y="269" width="602" height="282"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell" rowHeight="57" id="Eyc-4m-wtW" customClass="UserTableViewCell" customModule="Pegg" customModuleProvider="target">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell" rowHeight="57" id="Eyc-4m-wtW" customClass="UserTableViewCell" customModule="Pegg" customModuleProvider="target">
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Eyc-4m-wtW" id="0hR-hM-nzJ">
                                             <autoresizingMask key="autoresizingMask"/>
@@ -1066,7 +1066,7 @@ Pegg – Engage your Environment</string>
         <image name="settings" width="42" height="42"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="toh-Ip-N6b"/>
+        <segue reference="FBA-gz-dAf"/>
         <segue reference="gko-F1-TsN"/>
         <segue reference="MfL-AJ-kp5"/>
     </inferredMetricsTieBreakers>
