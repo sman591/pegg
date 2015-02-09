@@ -20,6 +20,7 @@ class FindViewController: UIViewController, CLLocationManagerDelegate, UITableVi
     
     var challenges = [Challenge]()
     var hasAppearedWithChallenges = false
+    var imageCache = [String : UIImage]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -61,6 +62,44 @@ class FindViewController: UIViewController, CLLocationManagerDelegate, UITableVi
         cell.nameLabel.text = challenge.name
         cell.dateLabel.text = challenge.timestamp
         cell.distanceLabel.text = challenge.distance
+        cell.imagePreview.image = challenge.image
+        
+        let urlString = "http://friendlyu.com/pegg/getImage.php?peggid=\(challenge.id)"
+        
+        var image = self.imageCache[challenge.id]
+        
+        if( image == nil ) {
+            // If the image does not exist, we need to download it
+            var imgURL: NSURL = NSURL(string: urlString)!
+            
+            // Download an NSData representation of the image at the URL
+            let request: NSURLRequest = NSURLRequest(URL: imgURL)
+            NSURLConnection.sendAsynchronousRequest(request, queue: NSOperationQueue.mainQueue(), completionHandler: {(response: NSURLResponse!,data: NSData!,error: NSError!) -> Void in
+                if error == nil {
+                    image = UIImage(data: data)
+                    
+                    // Store the image in to our cache
+                    self.imageCache[urlString] = image
+                    dispatch_async(dispatch_get_main_queue(), {
+                        if let cellToUpdate = tableView.cellForRowAtIndexPath(indexPath) {
+                            cellToUpdate.imageView?.image = image
+                        }
+                    })
+                }
+                else {
+                    println("Error: \(error.localizedDescription)")
+                }
+            })
+            
+        }
+        else {
+            dispatch_async(dispatch_get_main_queue(), {
+                if let cellToUpdate = tableView.cellForRowAtIndexPath(indexPath) {
+                    cellToUpdate.imageView?.image = image
+                }
+            })
+        }
+        
         
         return cell
     }
@@ -92,9 +131,10 @@ class FindViewController: UIViewController, CLLocationManagerDelegate, UITableVi
                             Alamofire.request(.GET, pegg["url"].stringValue)
                                 .response {(request, response, imageData, error) in
                                     if (error != nil) {
-                                        self.challenges[index.toInt()!].image = UIImage(named: "headshot")!
+                                        //self.challenges[index.toInt()!].image = UIImage(named: "headshot")!
                                     } else {
-                                        self.challenges[index.toInt()!].image = UIImage(named: "headshot")!
+                                        //self.challenges[index.toInt()!].image = UIImage(named: "headshot")!
+                                        //println(response)
                                     }
                                     self.tableView.reloadData()
                             }
