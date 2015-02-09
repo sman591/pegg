@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import UIKit
 
 class Challenge: NSObject {
     
@@ -14,12 +15,14 @@ class Challenge: NSObject {
     let distance: String
     let id: String
     let timestamp: String
+    var image: UIImage
     
     required init(name: String, distance: String, id: String, timestamp: String) {
         self.name = name
         self.distance = distance
         self.id = id
         self.timestamp = timestamp
+        self.image = UIImage(named: "headshot")!
     }
     
 }

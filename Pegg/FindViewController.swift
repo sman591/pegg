@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Alamofire
 import SwiftyJSON
 import CoreLocation
 
@@ -82,11 +83,21 @@ class FindViewController: UIViewController, CLLocationManagerDelegate, UITableVi
                     self.challenges = []
                 
                     for (index, pegg) in json["peggs"] {
+                        println(pegg)
                         self.challenges.append(Challenge(
                             name: pegg["name"].stringValue,
                             distance: pegg["distance"].stringValue,
                             id: pegg["id"].stringValue,
                             timestamp: pegg["timestamp"].stringValue))
+                            Alamofire.request(.GET, pegg["url"].stringValue)
+                                .response {(request, response, imageData, error) in
+                                    if (error != nil) {
+                                        self.challenges[index.toInt()!].image = UIImage(named: "headshot")!
+                                    } else {
+                                        self.challenges[index.toInt()!].image = UIImage(named: "headshot")!
+                                    }
+                                    self.tableView.reloadData()
+                            }
                     }
                 
                     if self.challenges.count == 0 {
