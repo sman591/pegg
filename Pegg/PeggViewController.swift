@@ -131,10 +131,12 @@ class PeggViewController: UIViewController, UIImagePickerControllerDelegate, UIN
         placeholderLabel.hidden = countElements(textView.text) != 0
     }
     
-    func textView(textView: UITextView!, shouldChangeTextInRange: NSRange, replacementText: NSString!) {
-        if(replacementText == "\n") {
+    func textView(textView: UITextView!, shouldChangeTextInRange: NSRange, replacementText: String!) -> Bool {
+        if (replacementText == "\n") {
             textView.resignFirstResponder()
+            return false
         }
+        return true
     }
     
 }
