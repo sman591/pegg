@@ -125,11 +125,14 @@ class PeggViewController: UIViewController, UIImagePickerControllerDelegate, UIN
     
     func imagePickerControllerDidCancel(picker: UIImagePickerController) {
         dismissViewControllerAnimated(true, completion: nil)
+        self.tabBarController?.selectedIndex = 0;
     }
     
     @IBAction func cancel(sender: UIBarButtonItem) {
         pegg = Pegg(image: nil, description: nil, lat: nil, lng: nil, receivers: nil, community: nil)
         imageView.image = nil
+        textView.text = ""
+        tableView.reloadData()
         takeAPegg()
     }
     
@@ -145,6 +148,14 @@ class PeggViewController: UIViewController, UIImagePickerControllerDelegate, UIN
         
         PeggAPI.createPegg(pegg.image!, description: pegg.description!, lat: pegg.lat!, lng: pegg.lng!, community: pegg.community!, receivers: pegg.receivers!, { json in
         })
+        
+        pegg = Pegg(image: nil, description: nil, lat: nil, lng: nil, receivers: nil, community: nil)
+        
+        imageView.image = nil
+        textView.text = nil;
+        tableView.reloadData()
+        
+        self.tabBarController?.selectedIndex = 0;
     }
     
     override func viewDidAppear(animated: Bool) {
